@@ -5,43 +5,130 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TFT Recorder</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link href="style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+
+
+
 </head>
 <body>
-    <div style="width: 70%; margin: 0 auto;margin-top: 2%">
+    <div style="width: 80%; margin: 0 auto;margin-top: 2%">
         <h1 class="text">TFT Recorder</h1>
     </div>
 
-    <div class="card custom-card border-dark bg-light bg-gradient mb-3">
-        <div class="card-header custom-card-header">
-            <ul class="nav nav-tabs custom-card-header-tab card-header-tabs" id="myTab">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="true" href="#">Active</a>
-                </li>
-                <li class="nav-item">
-                    <button class="nav-link" id="addTab"><strong>+</strong></button>
-                </li>
-            </ul>
-        </div>
-        <div class="card-body row"> 
-            <div class="col-6 text-right border-right"> 
-                <div class="col-6 text-right custom-vertical-line">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text on the left side.</p>
+    <form id="champions-form">
+        <div class="card custom-card border-dark bg-light bg-gradient mb-3">
+            <div class="card-header custom-card-header">
+                <ul class="nav nav-tabs custom-card-header-tab card-header-tabs" id="myTab">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="true" href="#">Active</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" id="addTab"><strong>+</strong></button>
+                    </li>
+                </ul>
+            </div>
+        
+            
+            <div class="card-body row"> 
+                <div class="col-6 text-right border-right custom-border-end">
+                    <!-- 第一列的内容开始 -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="player1-container-top">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="add-player1-content-btn" class="btn btn-primary custom-add-button">Add Champion</button>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="player1-container-bottom">
+                                <div class="row">
+                                    <div class="col-4-5">
+                                        <div class="card custom-card-hextech border-dark mb-3">
+                                            <div class="portal-title">传送门</div>
+                                            <select name="portal" class="select2-search portal-select">
+                                                <option>gold</option>
+                                                <option>silver</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-5-5">
+                                        <div class="card custom-card-hextecha border-dark mb-3">
+                                            <div class="hextech-title">海克斯</div>
+                                            <div class="row">
+                                                <div class="col-4 tight-padding"> 
+                                                    <select name="hex1" class="select2-search hex-select">
+                                                    </select>
+                                                </div>
+                                                <div class="col-4 tight-padding"> 
+                                                    <select name="hex2" class="select2-search hex-select">
+                                                    </select>
+                                                </div>
+                                                <div class="col-4 tight-padding">                                                     
+                                                    <select name="hex3" class="select2-search hex-select">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-1">
+                                        <div class="btn-group custom-btn-group" role="group" aria-label="Basic radio toggle button group">
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="lose" autocomplete="off" checked>
+                                            <label class="btn btn-outline-danger" for="btnradio1">Lose</label>
+                                          
+                                            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" value="win" autocomplete="off">
+                                            <label class="btn btn-outline-success" for="btnradio2">Win</label>
+
+                                          </div>
+                                          
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <!-- 第一列的内容结束 -->
+                </div>
+                <div class="col-6">
+                    <!-- 第二列的内容开始 -->
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="player2-container-top">
+                                <!-- 第二列的第一行内容 -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div id="player2-container-bottom">
+                                <!-- 第二列的第二行内容 -->
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" id="add-player2-content-btn" class="btn btn-primary">Add Champion</button>
+                    <!-- 第二列的内容结束 -->
                 </div>
             </div>
-            <div class="col-6"> 
-                <p class="card-text">With supporting text on the right side.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card-footer custom-footer border-dark ">
+                <button type="button" class="btn btn-success custom-button btn-sm">submit form</button>
             </div>
         </div>
-        <div class="card-footer custom-footer border-dark ">
-        </div>
-    </div>
+    </form>
+
+
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- 引入jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+      <!-- 引入Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     
     <!-- Your custom scripts -->
     <script src="script.js"></script>
+
+
 </body>
 </html>

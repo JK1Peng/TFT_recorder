@@ -1,13 +1,66 @@
 /* style.css */
 .custom-card {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
     margin-bottom: 10%;
     margin-top: 1%;
-    height: 80vh;
+    min-height: 85vh;
     text-align: center;
     border-radius: 30px;
     border-width: 3px;
+}
+
+.custom-card-champion{
+    height: 7vh;
+    width: 100%;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+.custom-card-hextech{
+    height: 12vh;
+    width: 80%;
+    margin-top: 30px;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+.custom-card-hextecha{
+    height: 12vh;
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+#player1-container-top {
+    display: flex;
+    flex-wrap: wrap; /* 允许子元素在需要时换行 */
+    min-height: 100px;
+}
+
+
+#player1-container-bottom {
+    position: relative; 
+    margin-top: 70%;
+    margin-bottom: 0%;
+    width: 101%;
+}
+
+#player1-container-bottom::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: -3%; 
+    width: 104%; 
+    border-top: 2px solid black; 
+    height: 0; 
+}
+
+.custom-btn-group {
+    margin-top: 80px;
+    margin-left: 20px;
+    width: 100%; 
 }
 
 .custom-card-header-tab {
@@ -15,19 +68,115 @@
 }
 
 .custom-card-header {
-    border-bottom: 1px solid #000; /* 黑色竖线 */
+    border-bottom: 1px solid #000; 
 }
 
 
 .custom-vertical-line {
-    border-right: 2px solid #000; /* 黑色竖线 */
+    border-right: 2px solid #000; 
+    margin-left: 13%; 
 }
 
 .custom-footer{
-    border-top: 2px solid #000; /* 黑色竖线 */
-    margin-bottom: 13%; /* 设置横线下方的边距 */
+    border-top: 2px solid #000; 
+    margin-bottom: 0%; 
+}
+
+
+
+.custom-border-end {
+    position: relative; 
+}
+
+.custom-border-end::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 0; 
+    width: 2px; 
+    height: 104%; 
+    background: #000; 
+}
+
+.custom-button{
+    margin-left: 0%;
+    margin-bottom: 0%;
+    font-size: 1rem; 
+    padding: 0px 20px; 
+    width: 150px;
+    height: 25px; 
+    border-width: 1px;
+}
+
+.custom-add-button{
+    margin-top: 0px; 
+}
+
+.traits-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+.champion-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-right: 0px; 
+    margin-top: -15px; 
+}
+
+.star-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.item-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.portal-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: 15px; 
+}
+
+.hextech-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: 13px; 
+}
+
+
+.col-2-5 {
+    flex: 0 0 20%; 
+    max-width: 20%;
+}
+
+.col-4-5 {
+    flex: 0 0 33%; 
+    max-width: 33%;
+}
+
+.col-5-5 {
+    flex: 0 0 40%; 
+    max-width: 50%;
+}
+
+.tight-padding {
+    padding-right: 13px; /* 减小右内边距 */
+    padding-left: 15px; /* 减小左内边距 */
 }
 
 body {
-    background-color: #f2e49f; /* 您选择的颜色 */
+    background-color: #f2e49f;
 }
+  
