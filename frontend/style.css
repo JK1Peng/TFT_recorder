@@ -43,8 +43,18 @@
     min-height: 100px;
 }
 
-
 #player1-container-bottom {
+    margin-top: 20px;
+    border-top: 2px solid black; 
+}
+
+#player2-container-top {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+}
+
+#player2-container-bottom {
     margin-top: 20px;
     border-top: 2px solid black; 
 }

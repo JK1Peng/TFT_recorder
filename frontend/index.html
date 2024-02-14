@@ -703,14 +703,657 @@
                             </div>
                         </div>
                     </div>
+                    <button type="button" id="add-player2-content-btn" class="btn btn-primary">Add Champion</button>
                     <div class="row">
                         <div class="col-12">
                             <div id="player2-container-bottom">
-                                <!-- 第二列的第二行内容 -->
+                                <div class="row">
+                                    <div class="col-4-5">
+                                        <div class="card custom-card-hextech border-dark mb-3">
+                                            <div class="portal-title">传送门</div>
+                                            <select name="portal" class="select2-search portal-select">
+                                                <option value="3_champions" data-search="">3弈子-3 champions</option>
+                                                <option value="3_cost_champion" data-search="">3费弈子-3 cost champion</option>
+                                                <option value="artifact_anvil" data-search="">神器锻造器-artifact anvil</option>
+                                                <option value="augment_payout" data-search="">强化符文赠金-augment payout</option>
+                                                <option value="carb_rave" data-search="">蟹之狂欢-carb rave</option>
+                                                <option value="champion_delivery" data-search="">弈子投送-champion delivery</option>
+                                                <option value="champion_duplicator" data-search="">英雄复制器-champion duplicator</option>
+                                                <option value="completed_item_anvil" data-search="">成装锻造器-completed item anvil</option>
+                                                <option value="compoent_anvils" data-search="">基础装备锻造器-compoent anvils</option>
+                                                <option value="crescendo" data-search="">银金彩乐章-crescendo</option>
+                                                <option value="decrescendo" data-search="">彩金银乐章decrescendo</option>
+                                                <option value="golden_finable" data-search="">黄金终章-golden finable</option>
+                                                <option value="golden_prelude" data-search="">黄金前奏-golden prelude</option>
+                                                <option value="golden_symphony" data-search="">三金交响乐-golden symphony</option>
+                                                <option value="item_payout" data-search="">装备赠金-item payout</option>
+                                                <option value="larger_legends" data-search="">大大英雄-larger legends</option>
+                                                <option value="loaded_carousels" data-search="">灌铅选秀-loaded carousels</option>
+                                                <option value="loot_subscription" data-search="">战利品订阅-loot subscription</option>
+                                                <option value="multi_talented" data-search="">多才多艺-multi talented</option>
+                                                <option value="pot_of_gold" data-search="">梦幻金罐-pot of gold</option>
+                                                <option value="prismatic_finale" data-search="">棱彩终章-prismatic finale</option>
+                                                <option value="prismatic_prelude" data-search="">棱彩前奏-prismatic prelude</option>
+                                                <option value="prismatic_symphony" data-search="">三彩交响乐-prismatic symphony</option>
+                                                <option value="radiant_blessing" data-search="">光明赐福-radiant blessing</option>
+                                                <option value="radiant_item" data-search="">光明武器-radiant item</option>
+                                                <option value="scuttle_puddle" data-search="">迅捷蟹水潭-scuttle puddle</option>
+                                                <option value="showtime" data-search="">好戏开场-showtime</option>
+                                                <option value="silver_symphony" data-search="">三银交响乐silver symphony</option>
+                                                <option value="spatula" data-search="">金铲铲-spatula</option>
+                                                <option value="support_anvil" data-search="">辅助装锻造器-support anvil</option>
+                                                <option value="tacticians_crown" data-search="">金铲铲冠冕-tacticians crown</option>
+                                                <option value="training_dummy" data-search="">训练假人-training dummy</option>
+                                                <option value="unit_accelerator" data-search="">弈子增速器-Unit Accelerator</option>
+                                                <option value="wandering_trainers" data-search="">漫游训练师-Wandering Trainers</option>
+                                                <option value="treasure_armory" data-search="">秘宝武器库-Treasure Armory</option>
+
+                                                
+                                                
+                                            </select>
+                                        </div>  
+                                    </div>
+                                    <div class="col-5-5">
+                                        <div class="card custom-card-hextecha border-dark mb-3">
+                                            <div class="hextech-title">海克斯</div>
+                                            <div class="row">
+                                                <div class="col-4 tight-padding"> 
+                                                    <select name="hex1" class="select2-search hex-select" required>
+                                                        <option value="none" selected></option>
+                                                        <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
+                                                        <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
+                                                        <option value="component_buffet" data-search="">基础装备自助餐 - Component Buffet</option>
+                                                        <option value="ones_twos_three" data-search="">一二二三 - Ones Twos Three</option>
+                                                        <option value="stationary_support_1" data-search="">假人辅助 I - Stationary Support I</option>
+                                                        <option value="spoils_of_war_1" data-search="">战争财宝 I - Spoils of War I</option>
+                                                        <option value="pumping_up_1" data-search="">打气 I - Pumping Up I</option>
+                                                        <option value="iron_assets" data-search="">黑铁资产 - Iron Assets</option>
+                                                        <option value="buried_treasures_1" data-search="">珍藏财宝 I - Buried Treasures I</option>
+                                                        <option value="blistering_strikes" data-search="">酷热打击 - Blistering Strikes</option>
+                                                        <option value="tiny_titans" data-search="">小巨人 - Tiny Titans</option>
+                                                        <option value="silver_spoon" data-search="">银汤匙 - Silver Spoon</option>
+                                                        <option value="cybernetic_uplink_1" data-search="">源计划上行链路 I - Cybernetic Uplink I</option>
+                                                        <option value="harmacist_1" data-search="">药剂师 I - Harmacist I</option>
+                                                        <option value="caretakers_ally" data-search="">游神的盟友 - Caretaker's Ally</option>
+                                                        <option value="one_two_five" data-search="">一，二，五！ - One, Two, Five!</option>
+                                                        <option value="afk" data-search="">开摆 - AFK (Away From Keyboard)</option>
+                                                        <option value="cybernetic_bulk_1" data-search="">源计划巨块 I - Cybernetic Bulk I</option>
+                                                        <option value="parting_gifts" data-search="">临别赠礼 - Parting Gifts</option>
+                                                        <option value="help_is_on_the_way" data-search="">救援已在路上 - Help Is On The Way</option>
+                                                        <option value="stimpack" data-search="">先苦后甜 - Stimpack</option>
+                                                        <option value="pandoras_items" data-search="">潘朵拉的装备 - Pandora's Items</option>
+                                                        <option value="switching_gears" data-search="">换档齿轮 - Switching Gears</option>
+                                                        <option value="team_building" data-search="">团队建设 - Team Building</option>
+                                                        <option value="latent_forge" data-search="">休眠锻炉 - Latent Forge</option>
+                                                        <option value="risky_moves" data-search="">冒险举动 - Risky Moves</option>
+                                                        <option value="best_friends_1" data-search="">最佳好友 I - Best Friends I</option>
+                                                        <option value="young_and_wild_and_free" data-search="">不拘一格 - Young and Wild and Free</option>
+                                                        <option value="healing_orbs_1" data-search="">治疗法球 I - Healing Orbs I</option>
+                                                        <option value="item_grab_bag_1" data-search="">百宝袋 I - Item Grab Bag I</option>
+                                                        <option value="teaming_up_1" data-search="">成群结队 I - Teaming Up I</option>
+                                                        <option value="unified_resistance_1" data-search="">联合抵抗 I - Unified Resistance I</option>
+                                                        <option value="silver_veil" data-search="">白银面纱 - Silver Veil</option>
+                                                        <option value="rolling_for_days_1" data-search="">D个痛快！ I - Rolling For Days I</option>
+                                                        <option value="keepers_1" data-search="">神盾使 I - Keepers I</option>
+                                                        <option value="cutting_corners" data-search="">走捷径 - Cutting Corners</option>
+                                                        <option value="partial_ascension" data-search="">部分飞升 - Partial Ascension</option>
+                                                        <option value="on_a_roll" data-search="">升星之运 - On a Roll</option>
+                                                        <option value="good_for_something_1" data-search="">有用之材 I - Good For Something I</option>
+                                                        <option value="silver_ticket" data-search="">白银门票 - Silver Ticket</option>
+                                                        <option value="blood_money" data-search="">血红金币 - Blood Money</option>
+                                                        <option value="sticks_and_stones" data-search="">挂件也疯狂 - Sticks And Stones</option>
+                                                        <option value="indomitable_will" data-search="">不屈意志 - Indomitable Will</option>
+                                                        <option value="late_game_specialist" data-search="">后期专家 - Lategame Specialist</option>
+                                                        <option value="recombobulator" data-search="">变形重组器 - Recombobulator</option>
+                                                        <option value="reach_the_summit" data-search="">登上顶峰 - Reach the Summit</option>
+                                                        <option value="extended_play" data-search="">扩展播放 - Extended Play</option>
+                                                        <option value="ramping_rhythm" data-search="">升温韵律 - Ramping Rhythm</option>
+                                                        <option value="too_big_to_fail" data-search="">大到不能倒 - Too Big to Fail</option>
+                                                        <option value="heroic_presence" data-search="">英勇气场 - Heroic Presence</option>
+                                                        <option value="scrappy_inventions" data-search="">极客发明 - Scrappy Inventions</option>
+                                                        <option value="emotional_connection" data-search="">情感连接 - Emotional Connection</option>
+                                                        <option value="submit_to_the_pit" data-search="">屈服于深渊 - Submit to the Pit</option>
+                                                        <option value="metal_heads" data-search="">金属脑袋 - Metalheads</option>
+                                                        <option value="blinged_out" data-search="">闪耀夺目 - Blinged Out</option>
+                                                        <option value="expose_weakness" data-search="">洞察弱点 - Expose Weakness</option>
+                                                        <option value="vampirism_2" data-search="">吸血习性 II - Vampirism II</option>
+                                                        <option value="patient_study" data-search="">耐心学习 - Patient Study</option>
+                                                        <option value="escort_quest" data-search="">主打一个陪伴 - Escort Quest</option>
+                                                        <option value="remember_your_roots" data-search="">同气连枝 - Remember Your Roots</option>
+                                                        <option value="combat_caster" data-search="">施法即是防御 - Combat Caster</option>
+                                                        <option value="portable_forge" data-search="">便携锻炉 - Portable Forge</option>
+                                                        <option value="sleight_of_hand" data-search="">行家里手 - Sleight of Hand</option>
+                                                        <option value="raise_the_tempo" data-search="">加快节奏 - Raise the Tempo</option>
+                                                        <option value="last_stand" data-search="">背水一战 - Last Stand</option>
+                                                        <option value="lucky_streak" data-search="">好运连连 - Lucky Streak</option>
+                                                        <option value="stars_are_born" data-search="">天生二星 - Stars are Born</option>
+                                                        <option value="spoils_of_war_2" data-search="">战争财宝 II - Spoils of War II</option>
+                                                        <option value="threes_a_crowd" data-search="">三费成众 - Three's a Crowd</option>
+                                                        <option value="inspiring_epitaph" data-search="">激昂墓志铭 - Inspiring Epitaph</option>
+                                                        <option value="magic_wand" data-search="">魔杖 - Magic Wand</option>
+                                                        <option value="trade_sector" data-search="">DD街区 - Trade Sector</option>
+                                                        <option value="buried_treasures_2" data-search="">珍藏财宝 II - Buried Treasures II</option>
+                                                        <option value="big_grab_bag" data-search="">大百宝袋 - Big Grab Bag</option>
+                                                        <option value="pumping_up_2" data-search="">打气 II - Pumping Up II</option>
+                                                        <option value="crash_test_dummies" data-search="">碰撞测试假人 - Crash Test Dummies</option>
+                                                        <option value="a_cut_above" data-search="">刀下取金 - A Cut Above</option>
+                                                        <option value="stationary_support_2" data-search="">假人辅助 II - Stationary Support II</option>
+                                                        <option value="caretakers_favor" data-search="">游神的眷顾 - Caretaker's Favor</option>
+                                                        <option value="shock_treatment" data-search="">电击疗法 - Shock Treatment</option>
+                                                        <option value="little_buddies" data-search="">小伙伴 - Little Buddies</option>
+                                                        <option value="you_have_my_bow" data-search="">吾弓听命于您 - You Have My Bow</option>
+                                                        <option value="jeweled_lotus_2" data-search="">珠光莲花 II - Jeweled Lotus II</option>
+                                                        <option value="you_have_my_sword" data-search="">吾剑听命于您 - You Have My Sword</option>
+                                                        <option value="metabolic_accelerator" data-search="">代谢增速器 - Metabolic Accelerator</option>
+                                                        <option value="harmacist_2" data-search="">药剂师 II - Harmacist II</option>
+                                                        <option value="idealism" data-search="">理想主义 - Idealism</option>
+                                                        <option value="teaming_up_2" data-search="">成群结队 II - Teaming Up II</option>
+                                                        <option value="thats_jazz_baby" data-search="">这就是爵士乐！ - That's Jazz, Baby!</option>
+                                                        <option value="heavy_hitters" data-search="">重量级人物 - Heavy Hitters</option>
+                                                        <option value="what_doesnt_kill_you" data-search="">在失败中变强 - What Doesn't Kill You</option>
+                                                        <option value="contagion" data-search="">减益传播 - Contagion</option>
+                                                        <option value="salvage_bin" data-search="">打捞桶 - Salvage Bin</option>
+                                                        <option value="healing_orbs_2" data-search="">治疗法球 II - Healing Orbs II</option>
+                                                        <option value="know_your_enemy" data-search="">了解你的敌人 - Know Your Enemy</option>
+                                                        <option value="gifts_from_the_fallen" data-search="">陨落赠礼 - Gifts from the Fallen</option>
+                                                        <option value="martyr" data-search="">殉道者 - Martyr</option>
+                                                        <option value="unified_resistance_2" data-search="">联合抵抗 II - Unified Resistance II</option>
+                                                        <option value="cybernetic_bulk_2" data-search="">源计划巨块 II - Cybernetic Bulk II</option>
+                                                        <option value="do_it_for_fans" data-search="">主打一个宠粉 - Do It for the Fans</option>
+                                                        <option value="tons_of_stats" data-search="">成吨的属性！ - Tons of Stats!</option>
+                                                        <option value="infusion" data-search="">灌注 - Infusion</option>
+                                                        <option value="insert_coin" data-search="">投币 - Insert Coin</option>
+                                                        <option value="balanced_budget_2" data-search="">平衡预算II - Balanced Budget</option>
+                                                        <option value="capricious_forge" data-search="">多变锻炉 - Capricious Forge</option>
+                                                        <option value="heroic_grab_bag" data-search="">英勇福袋 - Heroic Grab Bag</option>
+                                                        <option value="cybernetic_uplink_2" data-search="">源计划上行链路 II - Cybernetic Uplink II</option>
+                                                        <option value="low_interest_rates" data-search="">低利率 - Low Interest Rates</option>
+                                                        <option value="two_healthy" data-search="">双喜临门 I - Two Healthy</option>
+                                                        <option value="support_cache" data-search="">辅助宝库 - Support Cache</option>
+                                                        <option value="clear_mind" data-search="">清晰头脑 - Clear Mind</option>
+                                                        <option value="crown_guarded" data-search="">冕已有卫 - Crown Guarded</option>
+                                                        <option value="portable_forge_+" data-search="">便携锻炉+ - Portable Forge+</option>
+                                                        <option value="portable_forge_++" data-search="">便携锻炉++ - Portable Forge++</option>
+                                                        <option value="golden_ticket" data-search="">黄金门票 - Golden Ticket</option>
+                                                        <option value="best_friends_2" data-search="">最佳好友 II - Best Friends II</option>
+                                                        <option value="scape_goat" data-search="">替罪羊 - Scapegoat</option>
+                                                        <option value="return_on_investment" data-search="">投资回报 - Return on Investment</option>
+                                                        <option value="not_today" data-search="">不是今天 - Not Today</option>
+                                                        <option value="cluttered_mind" data-search="">纷乱头脑 - Cluttered Mind</option>
+                                                        <option value="live_for_danger" data-search="">危机亦生机 - Live for Danger</option>
+                                                        <option value="two_healthy" data-search="">二费活力 - Two Healthy</option>
+                                                        <option value="threes_company" data-search="">三费小组 - Three's Company</option>
+                                                        <option value="rich_get_richer" data-search="">利滚利 - Rich Get Richer</option>
+                                                        <option value="long_distance_pals_2" data-search="">天涯若比邻 - Long Distance Pals</option>
+                                                        <option value="good_for_something_2" data-search="">有用之材 II - Good For Something II</option>
+                                                        <option value="big_gains" data-search="">赚大发 - Big Gains</option>
+                                                        <option value="fully_adapted" data-search="">完全适应 - Fully Adapted</option>
+                                                        <option value="bounty_hunters" data-search="">赏金猎人团 - Bounty Hunters</option>
+                                                        <option value="rich_get_richer_+" data-search="">利滚利加强版 - Rich Get Richer+</option>
+                                                        <option value="ascension" data-search="">飞升 - Ascension</option>
+                                                        <option value="keepers_2" data-search="">神盾使 II - Keepers II</option>
+                                                        <option value="balanced_budget_2_+" data-search="">平衡预算+ - Balanced Budget+</option>
+                                                        <option value="bigger_shot" data-search="">更大的腕儿 - Bigger Shot</option>
+                                                        <option value="pandoras_items_2" data-search="">潘朵拉的装备 II - Pandora's Items II</option>
+                                                        <option value="gargantuan_resolve" data-search="">参天巨人的坚决 - Gargantuan Resolve</option>
+                                                        <option value="double_the_funk" data-search="">双倍带感 - Double the Funk</option>
+                                                        <option value="salvage_bin_+" data-search="">打捞桶+ - Salvage Bin+</option>
+                                                        <option value="the_oi_razzle_dazzle" data-search="">耀到眼花 - The Ol' Razzle Dazzle</option>
+                                                        <option value="learning_to_spell" data-search="">学习拼读 - Learning to Spell</option>
+                                                        <option value="frequent_flier" data-search="">常客优惠 - Frequent Flier</option>
+                                                        <option value="blank_slate" data-search="">掀桌 - Blank Slate</option>
+                                                        <option value="heart_throbs" data-search="">怦然心动 - Heartthrobs</option>                                                        
+                                                        <option value="march_of_progress" data-search="">前进之路 - March of Progress</option>
+                                                        <option value="roll_the_dice" data-search="">交给运气 - Roll The Dice</option>
+                                                        <option value="lucky_gloves_+" data-search="">幸运手套++ - Lucky Gloves++</option>
+                                                        <option value="shopping_spree" data-search="">大买特买 - Shopping Spree</option>
+                                                        <option value="phreaky_friday" data-search="">成吨的伤害 - Phreaky Friday</option>
+                                                        <option value="binary_airdrop" data-search="">二进制空投 - Binary Airdrop</option>
+                                                        <option value="going_long" data-search="">遥遥领先 - Going Long</option>
+                                                        <option value="infernal_contract" data-search="">炼狱合约 - Infernal Contract</option>
+                                                        <option value="buried_treasures_3" data-search="">珍藏财宝 III - Buried Treasures III</option>
+                                                        <option value="impenetrable_bulwark" data-search="">不破壁垒 - Impenetrable Bulwark</option>
+                                                        <option value="tiniest_titan_+" data-search="">最小巨人+ - Tiniest Titan+</option>
+                                                        <option value="pumping_up_3" data-search="">打气 III - Pumping Up III</option>
+                                                        <option value="jeweled_lotus_3" data-search="">珠光莲花 III - Jeweled Lotus III</option>
+                                                        <option value="stationary_support_3" data-search="">假人辅助 III - Stationary Support III</option>
+                                                        <option value="starter_kit" data-search="">入门套件 - Starter Kit</option>
+                                                        <option value="hologram" data-search="">全息投影 - Hologram</option>
+                                                        <option value="new_recruit" data-search="">新人入队 - New Recruit</option>
+                                                        <option value="phreaky_friday_+" data-search="">成吨的伤害+ - Phreaky Friday +</option>
+                                                        <option value="radiant_relics" data-search="">光明圣物 - Radiant Relics</option>
+                                                        <option value="endless_hordes" data-search="">无尽部落 - Endless Hordes</option>
+                                                        <option value="twin_terror_2" data-search="">双喜临门 II - Twin Terror II</option>
+                                                        <option value="harmacist_3" data-search="">药剂师 III - Harmacist III</option>
+                                                        <option value="spoils_of_war_3" data-search="">战争财宝 III - Spoils of War III</option>
+                                                        <option value="living_forge" data-search="">活体锻炉 - Living Forge</option>
+                                                        <option value="the_golden_egg" data-search="">金蛋 - The Golden Egg</option>
+                                                        <option value="cybernetic_bulk_3" data-search="">源计划巨块 III - Cybernetic Bulk III</option>
+                                                        <option value="blinding_speed" data-search="">炫目之速 - Blinding Speed</option>
+                                                        <option value="unleashed_arcana" data-search="">奥秘启封 - Unleashed Arcana</option>
+                                                        <option value="talent_search" data-search="">大师级星探 - Talent Search</option>
+                                                        <option value="final_ascension" data-search="">终极飞升 - Final Ascension</option>
+                                                        <option value="overwhelming_force" data-search="">克敌双刃 - Overwhelming Force</option>
+                                                        <option value="wellness_trust" data-search="">健康信用 - Wellness Trust</option>
+                                                        <option value="tiniest_titan" data-search="">最小巨人 - Tiniest Titan</option>
+                                                        <option value="pandoras_items_3" data-search="">潘朵拉的装备 III - Pandora's Items III</option>
+                                                        <option value="lucky_gloves" data-search="">幸运手套 - Lucky Gloves</option>
+                                                        <option value="cybernetic_uplink_3" data-search="">源计划上行链路 III - Cybernetic Uplink III</option>
+                                                        <option value="level_up" data-search="">升级咯！ - Level Up!</option>
+                                                        <option value="hedge_fund_++" data-search="">对冲基金++ - Hedge Fund++</option>
+                                                        <option value="cruel_pact" data-search="">恶魔契约 - Cruel Pact</option>
+                                                        <option value="hedge_fund" data-search="">对冲基金 - Hedge Fund</option>
+                                                        <option value="determined_investors" data-search="">坚定投资器 - Determined Investors</option>
+                                                        <option value="hedge_fund_+" data-search="">对冲基金+ - Hedge Fund+</option>
+                                                        <option value="prismatic_ticket" data-search="">棱彩门票 - Prismatic Ticket</option>
+                                                        <option value="caretakers_chosen" data-search="">游神的神选 - Caretaker's Chosen</option>
+                                                        <option value="cursed_crown" data-search="">诅咒冠冕 - Cursed Crown</option>
+                                                        <option value="birthday_present" data-search="">生日礼物 - Birthday Present</option>
+                                                        <option value="what_the_forge" data-search="">整活锻炉 - What The Forge</option>
+                                                        <option value="final_reserves" data-search="">最后储备 - Final Reserves</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-4 tight-padding"> 
+                                                    <select name="hex2" class="select2-search hex-select">
+                                                        <option value="none" selected></option>
+                                                        <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
+                                                        <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
+                                                        <option value="component_buffet" data-search="">基础装备自助餐 - Component Buffet</option>
+                                                        <option value="ones_twos_three" data-search="">一二二三 - Ones Twos Three</option>
+                                                        <option value="stationary_support_1" data-search="">假人辅助 I - Stationary Support I</option>
+                                                        <option value="spoils_of_war_1" data-search="">战争财宝 I - Spoils of War I</option>
+                                                        <option value="pumping_up_1" data-search="">打气 I - Pumping Up I</option>
+                                                        <option value="iron_assets" data-search="">黑铁资产 - Iron Assets</option>
+                                                        <option value="buried_treasures_1" data-search="">珍藏财宝 I - Buried Treasures I</option>
+                                                        <option value="blistering_strikes" data-search="">酷热打击 - Blistering Strikes</option>
+                                                        <option value="tiny_titans" data-search="">小巨人 - Tiny Titans</option>
+                                                        <option value="silver_spoon" data-search="">银汤匙 - Silver Spoon</option>
+                                                        <option value="cybernetic_uplink_1" data-search="">源计划上行链路 I - Cybernetic Uplink I</option>
+                                                        <option value="harmacist_1" data-search="">药剂师 I - Harmacist I</option>
+                                                        <option value="caretakers_ally" data-search="">游神的盟友 - Caretaker's Ally</option>
+                                                        <option value="one_two_five" data-search="">一，二，五！ - One, Two, Five!</option>
+                                                        <option value="afk" data-search="">开摆 - AFK (Away From Keyboard)</option>
+                                                        <option value="cybernetic_bulk_1" data-search="">源计划巨块 I - Cybernetic Bulk I</option>
+                                                        <option value="parting_gifts" data-search="">临别赠礼 - Parting Gifts</option>
+                                                        <option value="help_is_on_the_way" data-search="">救援已在路上 - Help Is On The Way</option>
+                                                        <option value="stimpack" data-search="">先苦后甜 - Stimpack</option>
+                                                        <option value="pandoras_items" data-search="">潘朵拉的装备 - Pandora's Items</option>
+                                                        <option value="switching_gears" data-search="">换档齿轮 - Switching Gears</option>
+                                                        <option value="team_building" data-search="">团队建设 - Team Building</option>
+                                                        <option value="latent_forge" data-search="">休眠锻炉 - Latent Forge</option>
+                                                        <option value="risky_moves" data-search="">冒险举动 - Risky Moves</option>
+                                                        <option value="best_friends_1" data-search="">最佳好友 I - Best Friends I</option>
+                                                        <option value="young_and_wild_and_free" data-search="">不拘一格 - Young and Wild and Free</option>
+                                                        <option value="healing_orbs_1" data-search="">治疗法球 I - Healing Orbs I</option>
+                                                        <option value="item_grab_bag_1" data-search="">百宝袋 I - Item Grab Bag I</option>
+                                                        <option value="teaming_up_1" data-search="">成群结队 I - Teaming Up I</option>
+                                                        <option value="unified_resistance_1" data-search="">联合抵抗 I - Unified Resistance I</option>
+                                                        <option value="silver_veil" data-search="">白银面纱 - Silver Veil</option>
+                                                        <option value="rolling_for_days_1" data-search="">D个痛快！ I - Rolling For Days I</option>
+                                                        <option value="keepers_1" data-search="">神盾使 I - Keepers I</option>
+                                                        <option value="cutting_corners" data-search="">走捷径 - Cutting Corners</option>
+                                                        <option value="partial_ascension" data-search="">部分飞升 - Partial Ascension</option>
+                                                        <option value="on_a_roll" data-search="">升星之运 - On a Roll</option>
+                                                        <option value="good_for_something_1" data-search="">有用之材 I - Good For Something I</option>
+                                                        <option value="silver_ticket" data-search="">白银门票 - Silver Ticket</option>
+                                                        <option value="blood_money" data-search="">血红金币 - Blood Money</option>
+                                                        <option value="sticks_and_stones" data-search="">挂件也疯狂 - Sticks And Stones</option>
+                                                        <option value="indomitable_will" data-search="">不屈意志 - Indomitable Will</option>
+                                                        <option value="late_game_specialist" data-search="">后期专家 - Lategame Specialist</option>
+                                                        <option value="recombobulator" data-search="">变形重组器 - Recombobulator</option>
+                                                        <option value="reach_the_summit" data-search="">登上顶峰 - Reach the Summit</option>
+                                                        <option value="extended_play" data-search="">扩展播放 - Extended Play</option>
+                                                        <option value="ramping_rhythm" data-search="">升温韵律 - Ramping Rhythm</option>
+                                                        <option value="too_big_to_fail" data-search="">大到不能倒 - Too Big to Fail</option>
+                                                        <option value="heroic_presence" data-search="">英勇气场 - Heroic Presence</option>
+                                                        <option value="scrappy_inventions" data-search="">极客发明 - Scrappy Inventions</option>
+                                                        <option value="emotional_connection" data-search="">情感连接 - Emotional Connection</option>
+                                                        <option value="submit_to_the_pit" data-search="">屈服于深渊 - Submit to the Pit</option>
+                                                        <option value="metal_heads" data-search="">金属脑袋 - Metalheads</option>
+                                                        <option value="blinged_out" data-search="">闪耀夺目 - Blinged Out</option>
+                                                        <option value="expose_weakness" data-search="">洞察弱点 - Expose Weakness</option>
+                                                        <option value="vampirism_2" data-search="">吸血习性 II - Vampirism II</option>
+                                                        <option value="patient_study" data-search="">耐心学习 - Patient Study</option>
+                                                        <option value="escort_quest" data-search="">主打一个陪伴 - Escort Quest</option>
+                                                        <option value="remember_your_roots" data-search="">同气连枝 - Remember Your Roots</option>
+                                                        <option value="combat_caster" data-search="">施法即是防御 - Combat Caster</option>
+                                                        <option value="portable_forge" data-search="">便携锻炉 - Portable Forge</option>
+                                                        <option value="sleight_of_hand" data-search="">行家里手 - Sleight of Hand</option>
+                                                        <option value="raise_the_tempo" data-search="">加快节奏 - Raise the Tempo</option>
+                                                        <option value="last_stand" data-search="">背水一战 - Last Stand</option>
+                                                        <option value="lucky_streak" data-search="">好运连连 - Lucky Streak</option>
+                                                        <option value="stars_are_born" data-search="">天生二星 - Stars are Born</option>
+                                                        <option value="spoils_of_war_2" data-search="">战争财宝 II - Spoils of War II</option>
+                                                        <option value="threes_a_crowd" data-search="">三费成众 - Three's a Crowd</option>
+                                                        <option value="inspiring_epitaph" data-search="">激昂墓志铭 - Inspiring Epitaph</option>
+                                                        <option value="magic_wand" data-search="">魔杖 - Magic Wand</option>
+                                                        <option value="trade_sector" data-search="">DD街区 - Trade Sector</option>
+                                                        <option value="buried_treasures_2" data-search="">珍藏财宝 II - Buried Treasures II</option>
+                                                        <option value="big_grab_bag" data-search="">大百宝袋 - Big Grab Bag</option>
+                                                        <option value="pumping_up_2" data-search="">打气 II - Pumping Up II</option>
+                                                        <option value="crash_test_dummies" data-search="">碰撞测试假人 - Crash Test Dummies</option>
+                                                        <option value="a_cut_above" data-search="">刀下取金 - A Cut Above</option>
+                                                        <option value="stationary_support_2" data-search="">假人辅助 II - Stationary Support II</option>
+                                                        <option value="caretakers_favor" data-search="">游神的眷顾 - Caretaker's Favor</option>
+                                                        <option value="shock_treatment" data-search="">电击疗法 - Shock Treatment</option>
+                                                        <option value="little_buddies" data-search="">小伙伴 - Little Buddies</option>
+                                                        <option value="you_have_my_bow" data-search="">吾弓听命于您 - You Have My Bow</option>
+                                                        <option value="jeweled_lotus_2" data-search="">珠光莲花 II - Jeweled Lotus II</option>
+                                                        <option value="you_have_my_sword" data-search="">吾剑听命于您 - You Have My Sword</option>
+                                                        <option value="metabolic_accelerator" data-search="">代谢增速器 - Metabolic Accelerator</option>
+                                                        <option value="harmacist_2" data-search="">药剂师 II - Harmacist II</option>
+                                                        <option value="idealism" data-search="">理想主义 - Idealism</option>
+                                                        <option value="teaming_up_2" data-search="">成群结队 II - Teaming Up II</option>
+                                                        <option value="thats_jazz_baby" data-search="">这就是爵士乐！ - That's Jazz, Baby!</option>
+                                                        <option value="heavy_hitters" data-search="">重量级人物 - Heavy Hitters</option>
+                                                        <option value="what_doesnt_kill_you" data-search="">在失败中变强 - What Doesn't Kill You</option>
+                                                        <option value="contagion" data-search="">减益传播 - Contagion</option>
+                                                        <option value="salvage_bin" data-search="">打捞桶 - Salvage Bin</option>
+                                                        <option value="healing_orbs_2" data-search="">治疗法球 II - Healing Orbs II</option>
+                                                        <option value="know_your_enemy" data-search="">了解你的敌人 - Know Your Enemy</option>
+                                                        <option value="gifts_from_the_fallen" data-search="">陨落赠礼 - Gifts from the Fallen</option>
+                                                        <option value="martyr" data-search="">殉道者 - Martyr</option>
+                                                        <option value="unified_resistance_2" data-search="">联合抵抗 II - Unified Resistance II</option>
+                                                        <option value="cybernetic_bulk_2" data-search="">源计划巨块 II - Cybernetic Bulk II</option>
+                                                        <option value="do_it_for_fans" data-search="">主打一个宠粉 - Do It for the Fans</option>
+                                                        <option value="tons_of_stats" data-search="">成吨的属性！ - Tons of Stats!</option>
+                                                        <option value="infusion" data-search="">灌注 - Infusion</option>
+                                                        <option value="insert_coin" data-search="">投币 - Insert Coin</option>
+                                                        <option value="balanced_budget_2" data-search="">平衡预算II - Balanced Budget</option>
+                                                        <option value="capricious_forge" data-search="">多变锻炉 - Capricious Forge</option>
+                                                        <option value="heroic_grab_bag" data-search="">英勇福袋 - Heroic Grab Bag</option>
+                                                        <option value="cybernetic_uplink_2" data-search="">源计划上行链路 II - Cybernetic Uplink II</option>
+                                                        <option value="low_interest_rates" data-search="">低利率 - Low Interest Rates</option>
+                                                        <option value="two_healthy" data-search="">双喜临门 I - Two Healthy</option>
+                                                        <option value="support_cache" data-search="">辅助宝库 - Support Cache</option>
+                                                        <option value="clear_mind" data-search="">清晰头脑 - Clear Mind</option>
+                                                        <option value="crown_guarded" data-search="">冕已有卫 - Crown Guarded</option>
+                                                        <option value="portable_forge_+" data-search="">便携锻炉+ - Portable Forge+</option>
+                                                        <option value="portable_forge_++" data-search="">便携锻炉++ - Portable Forge++</option>
+                                                        <option value="golden_ticket" data-search="">黄金门票 - Golden Ticket</option>
+                                                        <option value="best_friends_2" data-search="">最佳好友 II - Best Friends II</option>
+                                                        <option value="scape_goat" data-search="">替罪羊 - Scapegoat</option>
+                                                        <option value="return_on_investment" data-search="">投资回报 - Return on Investment</option>
+                                                        <option value="not_today" data-search="">不是今天 - Not Today</option>
+                                                        <option value="cluttered_mind" data-search="">纷乱头脑 - Cluttered Mind</option>
+                                                        <option value="live_for_danger" data-search="">危机亦生机 - Live for Danger</option>
+                                                        <option value="two_healthy" data-search="">二费活力 - Two Healthy</option>
+                                                        <option value="threes_company" data-search="">三费小组 - Three's Company</option>
+                                                        <option value="rich_get_richer" data-search="">利滚利 - Rich Get Richer</option>
+                                                        <option value="long_distance_pals_2" data-search="">天涯若比邻 - Long Distance Pals</option>
+                                                        <option value="good_for_something_2" data-search="">有用之材 II - Good For Something II</option>
+                                                        <option value="big_gains" data-search="">赚大发 - Big Gains</option>
+                                                        <option value="fully_adapted" data-search="">完全适应 - Fully Adapted</option>
+                                                        <option value="bounty_hunters" data-search="">赏金猎人团 - Bounty Hunters</option>
+                                                        <option value="rich_get_richer_+" data-search="">利滚利加强版 - Rich Get Richer+</option>
+                                                        <option value="ascension" data-search="">飞升 - Ascension</option>
+                                                        <option value="keepers_2" data-search="">神盾使 II - Keepers II</option>
+                                                        <option value="balanced_budget_2_+" data-search="">平衡预算+ - Balanced Budget+</option>
+                                                        <option value="bigger_shot" data-search="">更大的腕儿 - Bigger Shot</option>
+                                                        <option value="pandoras_items_2" data-search="">潘朵拉的装备 II - Pandora's Items II</option>
+                                                        <option value="gargantuan_resolve" data-search="">参天巨人的坚决 - Gargantuan Resolve</option>
+                                                        <option value="double_the_funk" data-search="">双倍带感 - Double the Funk</option>
+                                                        <option value="salvage_bin_+" data-search="">打捞桶+ - Salvage Bin+</option>
+                                                        <option value="the_oi_razzle_dazzle" data-search="">耀到眼花 - The Ol' Razzle Dazzle</option>
+                                                        <option value="learning_to_spell" data-search="">学习拼读 - Learning to Spell</option>
+                                                        <option value="frequent_flier" data-search="">常客优惠 - Frequent Flier</option>
+                                                        <option value="blank_slate" data-search="">掀桌 - Blank Slate</option>
+                                                        <option value="heart_throbs" data-search="">怦然心动 - Heartthrobs</option>                                                        
+                                                        <option value="march_of_progress" data-search="">前进之路 - March of Progress</option>
+                                                        <option value="roll_the_dice" data-search="">交给运气 - Roll The Dice</option>
+                                                        <option value="lucky_gloves_+" data-search="">幸运手套++ - Lucky Gloves++</option>
+                                                        <option value="shopping_spree" data-search="">大买特买 - Shopping Spree</option>
+                                                        <option value="phreaky_friday" data-search="">成吨的伤害 - Phreaky Friday</option>
+                                                        <option value="binary_airdrop" data-search="">二进制空投 - Binary Airdrop</option>
+                                                        <option value="going_long" data-search="">遥遥领先 - Going Long</option>
+                                                        <option value="infernal_contract" data-search="">炼狱合约 - Infernal Contract</option>
+                                                        <option value="buried_treasures_3" data-search="">珍藏财宝 III - Buried Treasures III</option>
+                                                        <option value="impenetrable_bulwark" data-search="">不破壁垒 - Impenetrable Bulwark</option>
+                                                        <option value="tiniest_titan_+" data-search="">最小巨人+ - Tiniest Titan+</option>
+                                                        <option value="pumping_up_3" data-search="">打气 III - Pumping Up III</option>
+                                                        <option value="jeweled_lotus_3" data-search="">珠光莲花 III - Jeweled Lotus III</option>
+                                                        <option value="stationary_support_3" data-search="">假人辅助 III - Stationary Support III</option>
+                                                        <option value="starter_kit" data-search="">入门套件 - Starter Kit</option>
+                                                        <option value="hologram" data-search="">全息投影 - Hologram</option>
+                                                        <option value="new_recruit" data-search="">新人入队 - New Recruit</option>
+                                                        <option value="phreaky_friday_+" data-search="">成吨的伤害+ - Phreaky Friday +</option>
+                                                        <option value="radiant_relics" data-search="">光明圣物 - Radiant Relics</option>
+                                                        <option value="endless_hordes" data-search="">无尽部落 - Endless Hordes</option>
+                                                        <option value="twin_terror_2" data-search="">双喜临门 II - Twin Terror II</option>
+                                                        <option value="harmacist_3" data-search="">药剂师 III - Harmacist III</option>
+                                                        <option value="spoils_of_war_3" data-search="">战争财宝 III - Spoils of War III</option>
+                                                        <option value="living_forge" data-search="">活体锻炉 - Living Forge</option>
+                                                        <option value="the_golden_egg" data-search="">金蛋 - The Golden Egg</option>
+                                                        <option value="cybernetic_bulk_3" data-search="">源计划巨块 III - Cybernetic Bulk III</option>
+                                                        <option value="blinding_speed" data-search="">炫目之速 - Blinding Speed</option>
+                                                        <option value="unleashed_arcana" data-search="">奥秘启封 - Unleashed Arcana</option>
+                                                        <option value="talent_search" data-search="">大师级星探 - Talent Search</option>
+                                                        <option value="final_ascension" data-search="">终极飞升 - Final Ascension</option>
+                                                        <option value="overwhelming_force" data-search="">克敌双刃 - Overwhelming Force</option>
+                                                        <option value="wellness_trust" data-search="">健康信用 - Wellness Trust</option>
+                                                        <option value="tiniest_titan" data-search="">最小巨人 - Tiniest Titan</option>
+                                                        <option value="pandoras_items_3" data-search="">潘朵拉的装备 III - Pandora's Items III</option>
+                                                        <option value="lucky_gloves" data-search="">幸运手套 - Lucky Gloves</option>
+                                                        <option value="cybernetic_uplink_3" data-search="">源计划上行链路 III - Cybernetic Uplink III</option>
+                                                        <option value="level_up" data-search="">升级咯！ - Level Up!</option>
+                                                        <option value="hedge_fund_++" data-search="">对冲基金++ - Hedge Fund++</option>
+                                                        <option value="cruel_pact" data-search="">恶魔契约 - Cruel Pact</option>
+                                                        <option value="hedge_fund" data-search="">对冲基金 - Hedge Fund</option>
+                                                        <option value="determined_investors" data-search="">坚定投资器 - Determined Investors</option>
+                                                        <option value="hedge_fund_+" data-search="">对冲基金+ - Hedge Fund+</option>
+                                                        <option value="prismatic_ticket" data-search="">棱彩门票 - Prismatic Ticket</option>
+                                                        <option value="caretakers_chosen" data-search="">游神的神选 - Caretaker's Chosen</option>
+                                                        <option value="cursed_crown" data-search="">诅咒冠冕 - Cursed Crown</option>
+                                                        <option value="birthday_present" data-search="">生日礼物 - Birthday Present</option>
+                                                        <option value="what_the_forge" data-search="">整活锻炉 - What The Forge</option>
+                                                        <option value="final_reserves" data-search="">最后储备 - Final Reserves</option>
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-4 tight-padding">                                                     
+                                                    <select name="hex3" class="select2-search hex-select">
+                                                        <option value="none" selected></option>
+                                                        <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
+                                                        <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
+                                                        <option value="component_buffet" data-search="">基础装备自助餐 - Component Buffet</option>
+                                                        <option value="ones_twos_three" data-search="">一二二三 - Ones Twos Three</option>
+                                                        <option value="stationary_support_1" data-search="">假人辅助 I - Stationary Support I</option>
+                                                        <option value="spoils_of_war_1" data-search="">战争财宝 I - Spoils of War I</option>
+                                                        <option value="pumping_up_1" data-search="">打气 I - Pumping Up I</option>
+                                                        <option value="iron_assets" data-search="">黑铁资产 - Iron Assets</option>
+                                                        <option value="buried_treasures_1" data-search="">珍藏财宝 I - Buried Treasures I</option>
+                                                        <option value="blistering_strikes" data-search="">酷热打击 - Blistering Strikes</option>
+                                                        <option value="tiny_titans" data-search="">小巨人 - Tiny Titans</option>
+                                                        <option value="silver_spoon" data-search="">银汤匙 - Silver Spoon</option>
+                                                        <option value="cybernetic_uplink_1" data-search="">源计划上行链路 I - Cybernetic Uplink I</option>
+                                                        <option value="harmacist_1" data-search="">药剂师 I - Harmacist I</option>
+                                                        <option value="caretakers_ally" data-search="">游神的盟友 - Caretaker's Ally</option>
+                                                        <option value="one_two_five" data-search="">一，二，五！ - One, Two, Five!</option>
+                                                        <option value="afk" data-search="">开摆 - AFK (Away From Keyboard)</option>
+                                                        <option value="cybernetic_bulk_1" data-search="">源计划巨块 I - Cybernetic Bulk I</option>
+                                                        <option value="parting_gifts" data-search="">临别赠礼 - Parting Gifts</option>
+                                                        <option value="help_is_on_the_way" data-search="">救援已在路上 - Help Is On The Way</option>
+                                                        <option value="stimpack" data-search="">先苦后甜 - Stimpack</option>
+                                                        <option value="pandoras_items" data-search="">潘朵拉的装备 - Pandora's Items</option>
+                                                        <option value="switching_gears" data-search="">换档齿轮 - Switching Gears</option>
+                                                        <option value="team_building" data-search="">团队建设 - Team Building</option>
+                                                        <option value="latent_forge" data-search="">休眠锻炉 - Latent Forge</option>
+                                                        <option value="risky_moves" data-search="">冒险举动 - Risky Moves</option>
+                                                        <option value="best_friends_1" data-search="">最佳好友 I - Best Friends I</option>
+                                                        <option value="young_and_wild_and_free" data-search="">不拘一格 - Young and Wild and Free</option>
+                                                        <option value="healing_orbs_1" data-search="">治疗法球 I - Healing Orbs I</option>
+                                                        <option value="item_grab_bag_1" data-search="">百宝袋 I - Item Grab Bag I</option>
+                                                        <option value="teaming_up_1" data-search="">成群结队 I - Teaming Up I</option>
+                                                        <option value="unified_resistance_1" data-search="">联合抵抗 I - Unified Resistance I</option>
+                                                        <option value="silver_veil" data-search="">白银面纱 - Silver Veil</option>
+                                                        <option value="rolling_for_days_1" data-search="">D个痛快！ I - Rolling For Days I</option>
+                                                        <option value="keepers_1" data-search="">神盾使 I - Keepers I</option>
+                                                        <option value="cutting_corners" data-search="">走捷径 - Cutting Corners</option>
+                                                        <option value="partial_ascension" data-search="">部分飞升 - Partial Ascension</option>
+                                                        <option value="on_a_roll" data-search="">升星之运 - On a Roll</option>
+                                                        <option value="good_for_something_1" data-search="">有用之材 I - Good For Something I</option>
+                                                        <option value="silver_ticket" data-search="">白银门票 - Silver Ticket</option>
+                                                        <option value="blood_money" data-search="">血红金币 - Blood Money</option>
+                                                        <option value="sticks_and_stones" data-search="">挂件也疯狂 - Sticks And Stones</option>
+                                                        <option value="indomitable_will" data-search="">不屈意志 - Indomitable Will</option>
+                                                        <option value="late_game_specialist" data-search="">后期专家 - Lategame Specialist</option>
+                                                        <option value="recombobulator" data-search="">变形重组器 - Recombobulator</option>
+                                                        <option value="reach_the_summit" data-search="">登上顶峰 - Reach the Summit</option>
+                                                        <option value="extended_play" data-search="">扩展播放 - Extended Play</option>
+                                                        <option value="ramping_rhythm" data-search="">升温韵律 - Ramping Rhythm</option>
+                                                        <option value="too_big_to_fail" data-search="">大到不能倒 - Too Big to Fail</option>
+                                                        <option value="heroic_presence" data-search="">英勇气场 - Heroic Presence</option>
+                                                        <option value="scrappy_inventions" data-search="">极客发明 - Scrappy Inventions</option>
+                                                        <option value="emotional_connection" data-search="">情感连接 - Emotional Connection</option>
+                                                        <option value="submit_to_the_pit" data-search="">屈服于深渊 - Submit to the Pit</option>
+                                                        <option value="metal_heads" data-search="">金属脑袋 - Metalheads</option>
+                                                        <option value="blinged_out" data-search="">闪耀夺目 - Blinged Out</option>
+                                                        <option value="expose_weakness" data-search="">洞察弱点 - Expose Weakness</option>
+                                                        <option value="vampirism_2" data-search="">吸血习性 II - Vampirism II</option>
+                                                        <option value="patient_study" data-search="">耐心学习 - Patient Study</option>
+                                                        <option value="escort_quest" data-search="">主打一个陪伴 - Escort Quest</option>
+                                                        <option value="remember_your_roots" data-search="">同气连枝 - Remember Your Roots</option>
+                                                        <option value="combat_caster" data-search="">施法即是防御 - Combat Caster</option>
+                                                        <option value="portable_forge" data-search="">便携锻炉 - Portable Forge</option>
+                                                        <option value="sleight_of_hand" data-search="">行家里手 - Sleight of Hand</option>
+                                                        <option value="raise_the_tempo" data-search="">加快节奏 - Raise the Tempo</option>
+                                                        <option value="last_stand" data-search="">背水一战 - Last Stand</option>
+                                                        <option value="lucky_streak" data-search="">好运连连 - Lucky Streak</option>
+                                                        <option value="stars_are_born" data-search="">天生二星 - Stars are Born</option>
+                                                        <option value="spoils_of_war_2" data-search="">战争财宝 II - Spoils of War II</option>
+                                                        <option value="threes_a_crowd" data-search="">三费成众 - Three's a Crowd</option>
+                                                        <option value="inspiring_epitaph" data-search="">激昂墓志铭 - Inspiring Epitaph</option>
+                                                        <option value="magic_wand" data-search="">魔杖 - Magic Wand</option>
+                                                        <option value="trade_sector" data-search="">DD街区 - Trade Sector</option>
+                                                        <option value="buried_treasures_2" data-search="">珍藏财宝 II - Buried Treasures II</option>
+                                                        <option value="big_grab_bag" data-search="">大百宝袋 - Big Grab Bag</option>
+                                                        <option value="pumping_up_2" data-search="">打气 II - Pumping Up II</option>
+                                                        <option value="crash_test_dummies" data-search="">碰撞测试假人 - Crash Test Dummies</option>
+                                                        <option value="a_cut_above" data-search="">刀下取金 - A Cut Above</option>
+                                                        <option value="stationary_support_2" data-search="">假人辅助 II - Stationary Support II</option>
+                                                        <option value="caretakers_favor" data-search="">游神的眷顾 - Caretaker's Favor</option>
+                                                        <option value="shock_treatment" data-search="">电击疗法 - Shock Treatment</option>
+                                                        <option value="little_buddies" data-search="">小伙伴 - Little Buddies</option>
+                                                        <option value="you_have_my_bow" data-search="">吾弓听命于您 - You Have My Bow</option>
+                                                        <option value="jeweled_lotus_2" data-search="">珠光莲花 II - Jeweled Lotus II</option>
+                                                        <option value="you_have_my_sword" data-search="">吾剑听命于您 - You Have My Sword</option>
+                                                        <option value="metabolic_accelerator" data-search="">代谢增速器 - Metabolic Accelerator</option>
+                                                        <option value="harmacist_2" data-search="">药剂师 II - Harmacist II</option>
+                                                        <option value="idealism" data-search="">理想主义 - Idealism</option>
+                                                        <option value="teaming_up_2" data-search="">成群结队 II - Teaming Up II</option>
+                                                        <option value="thats_jazz_baby" data-search="">这就是爵士乐！ - That's Jazz, Baby!</option>
+                                                        <option value="heavy_hitters" data-search="">重量级人物 - Heavy Hitters</option>
+                                                        <option value="what_doesnt_kill_you" data-search="">在失败中变强 - What Doesn't Kill You</option>
+                                                        <option value="contagion" data-search="">减益传播 - Contagion</option>
+                                                        <option value="salvage_bin" data-search="">打捞桶 - Salvage Bin</option>
+                                                        <option value="healing_orbs_2" data-search="">治疗法球 II - Healing Orbs II</option>
+                                                        <option value="know_your_enemy" data-search="">了解你的敌人 - Know Your Enemy</option>
+                                                        <option value="gifts_from_the_fallen" data-search="">陨落赠礼 - Gifts from the Fallen</option>
+                                                        <option value="martyr" data-search="">殉道者 - Martyr</option>
+                                                        <option value="unified_resistance_2" data-search="">联合抵抗 II - Unified Resistance II</option>
+                                                        <option value="cybernetic_bulk_2" data-search="">源计划巨块 II - Cybernetic Bulk II</option>
+                                                        <option value="do_it_for_fans" data-search="">主打一个宠粉 - Do It for the Fans</option>
+                                                        <option value="tons_of_stats" data-search="">成吨的属性！ - Tons of Stats!</option>
+                                                        <option value="infusion" data-search="">灌注 - Infusion</option>
+                                                        <option value="insert_coin" data-search="">投币 - Insert Coin</option>
+                                                        <option value="balanced_budget_2" data-search="">平衡预算II - Balanced Budget</option>
+                                                        <option value="capricious_forge" data-search="">多变锻炉 - Capricious Forge</option>
+                                                        <option value="heroic_grab_bag" data-search="">英勇福袋 - Heroic Grab Bag</option>
+                                                        <option value="cybernetic_uplink_2" data-search="">源计划上行链路 II - Cybernetic Uplink II</option>
+                                                        <option value="low_interest_rates" data-search="">低利率 - Low Interest Rates</option>
+                                                        <option value="two_healthy" data-search="">双喜临门 I - Two Healthy</option>
+                                                        <option value="support_cache" data-search="">辅助宝库 - Support Cache</option>
+                                                        <option value="clear_mind" data-search="">清晰头脑 - Clear Mind</option>
+                                                        <option value="crown_guarded" data-search="">冕已有卫 - Crown Guarded</option>
+                                                        <option value="portable_forge_+" data-search="">便携锻炉+ - Portable Forge+</option>
+                                                        <option value="portable_forge_++" data-search="">便携锻炉++ - Portable Forge++</option>
+                                                        <option value="golden_ticket" data-search="">黄金门票 - Golden Ticket</option>
+                                                        <option value="best_friends_2" data-search="">最佳好友 II - Best Friends II</option>
+                                                        <option value="scape_goat" data-search="">替罪羊 - Scapegoat</option>
+                                                        <option value="return_on_investment" data-search="">投资回报 - Return on Investment</option>
+                                                        <option value="not_today" data-search="">不是今天 - Not Today</option>
+                                                        <option value="cluttered_mind" data-search="">纷乱头脑 - Cluttered Mind</option>
+                                                        <option value="live_for_danger" data-search="">危机亦生机 - Live for Danger</option>
+                                                        <option value="two_healthy" data-search="">二费活力 - Two Healthy</option>
+                                                        <option value="threes_company" data-search="">三费小组 - Three's Company</option>
+                                                        <option value="rich_get_richer" data-search="">利滚利 - Rich Get Richer</option>
+                                                        <option value="long_distance_pals_2" data-search="">天涯若比邻 - Long Distance Pals</option>
+                                                        <option value="good_for_something_2" data-search="">有用之材 II - Good For Something II</option>
+                                                        <option value="big_gains" data-search="">赚大发 - Big Gains</option>
+                                                        <option value="fully_adapted" data-search="">完全适应 - Fully Adapted</option>
+                                                        <option value="bounty_hunters" data-search="">赏金猎人团 - Bounty Hunters</option>
+                                                        <option value="rich_get_richer_+" data-search="">利滚利加强版 - Rich Get Richer+</option>
+                                                        <option value="ascension" data-search="">飞升 - Ascension</option>
+                                                        <option value="keepers_2" data-search="">神盾使 II - Keepers II</option>
+                                                        <option value="balanced_budget_2_+" data-search="">平衡预算+ - Balanced Budget+</option>
+                                                        <option value="bigger_shot" data-search="">更大的腕儿 - Bigger Shot</option>
+                                                        <option value="pandoras_items_2" data-search="">潘朵拉的装备 II - Pandora's Items II</option>
+                                                        <option value="gargantuan_resolve" data-search="">参天巨人的坚决 - Gargantuan Resolve</option>
+                                                        <option value="double_the_funk" data-search="">双倍带感 - Double the Funk</option>
+                                                        <option value="salvage_bin_+" data-search="">打捞桶+ - Salvage Bin+</option>
+                                                        <option value="the_oi_razzle_dazzle" data-search="">耀到眼花 - The Ol' Razzle Dazzle</option>
+                                                        <option value="learning_to_spell" data-search="">学习拼读 - Learning to Spell</option>
+                                                        <option value="frequent_flier" data-search="">常客优惠 - Frequent Flier</option>
+                                                        <option value="blank_slate" data-search="">掀桌 - Blank Slate</option>
+                                                        <option value="heart_throbs" data-search="">怦然心动 - Heartthrobs</option>                                                        
+                                                        <option value="march_of_progress" data-search="">前进之路 - March of Progress</option>
+                                                        <option value="roll_the_dice" data-search="">交给运气 - Roll The Dice</option>
+                                                        <option value="lucky_gloves_+" data-search="">幸运手套++ - Lucky Gloves++</option>
+                                                        <option value="shopping_spree" data-search="">大买特买 - Shopping Spree</option>
+                                                        <option value="phreaky_friday" data-search="">成吨的伤害 - Phreaky Friday</option>
+                                                        <option value="binary_airdrop" data-search="">二进制空投 - Binary Airdrop</option>
+                                                        <option value="going_long" data-search="">遥遥领先 - Going Long</option>
+                                                        <option value="infernal_contract" data-search="">炼狱合约 - Infernal Contract</option>
+                                                        <option value="buried_treasures_3" data-search="">珍藏财宝 III - Buried Treasures III</option>
+                                                        <option value="impenetrable_bulwark" data-search="">不破壁垒 - Impenetrable Bulwark</option>
+                                                        <option value="tiniest_titan_+" data-search="">最小巨人+ - Tiniest Titan+</option>
+                                                        <option value="pumping_up_3" data-search="">打气 III - Pumping Up III</option>
+                                                        <option value="jeweled_lotus_3" data-search="">珠光莲花 III - Jeweled Lotus III</option>
+                                                        <option value="stationary_support_3" data-search="">假人辅助 III - Stationary Support III</option>
+                                                        <option value="starter_kit" data-search="">入门套件 - Starter Kit</option>
+                                                        <option value="hologram" data-search="">全息投影 - Hologram</option>
+                                                        <option value="new_recruit" data-search="">新人入队 - New Recruit</option>
+                                                        <option value="phreaky_friday_+" data-search="">成吨的伤害+ - Phreaky Friday +</option>
+                                                        <option value="radiant_relics" data-search="">光明圣物 - Radiant Relics</option>
+                                                        <option value="endless_hordes" data-search="">无尽部落 - Endless Hordes</option>
+                                                        <option value="twin_terror_2" data-search="">双喜临门 II - Twin Terror II</option>
+                                                        <option value="harmacist_3" data-search="">药剂师 III - Harmacist III</option>
+                                                        <option value="spoils_of_war_3" data-search="">战争财宝 III - Spoils of War III</option>
+                                                        <option value="living_forge" data-search="">活体锻炉 - Living Forge</option>
+                                                        <option value="the_golden_egg" data-search="">金蛋 - The Golden Egg</option>
+                                                        <option value="cybernetic_bulk_3" data-search="">源计划巨块 III - Cybernetic Bulk III</option>
+                                                        <option value="blinding_speed" data-search="">炫目之速 - Blinding Speed</option>
+                                                        <option value="unleashed_arcana" data-search="">奥秘启封 - Unleashed Arcana</option>
+                                                        <option value="talent_search" data-search="">大师级星探 - Talent Search</option>
+                                                        <option value="final_ascension" data-search="">终极飞升 - Final Ascension</option>
+                                                        <option value="overwhelming_force" data-search="">克敌双刃 - Overwhelming Force</option>
+                                                        <option value="wellness_trust" data-search="">健康信用 - Wellness Trust</option>
+                                                        <option value="tiniest_titan" data-search="">最小巨人 - Tiniest Titan</option>
+                                                        <option value="pandoras_items_3" data-search="">潘朵拉的装备 III - Pandora's Items III</option>
+                                                        <option value="lucky_gloves" data-search="">幸运手套 - Lucky Gloves</option>
+                                                        <option value="cybernetic_uplink_3" data-search="">源计划上行链路 III - Cybernetic Uplink III</option>
+                                                        <option value="level_up" data-search="">升级咯！ - Level Up!</option>
+                                                        <option value="hedge_fund_++" data-search="">对冲基金++ - Hedge Fund++</option>
+                                                        <option value="cruel_pact" data-search="">恶魔契约 - Cruel Pact</option>
+                                                        <option value="hedge_fund" data-search="">对冲基金 - Hedge Fund</option>
+                                                        <option value="determined_investors" data-search="">坚定投资器 - Determined Investors</option>
+                                                        <option value="hedge_fund_+" data-search="">对冲基金+ - Hedge Fund+</option>
+                                                        <option value="prismatic_ticket" data-search="">棱彩门票 - Prismatic Ticket</option>
+                                                        <option value="caretakers_chosen" data-search="">游神的神选 - Caretaker's Chosen</option>
+                                                        <option value="cursed_crown" data-search="">诅咒冠冕 - Cursed Crown</option>
+                                                        <option value="birthday_present" data-search="">生日礼物 - Birthday Present</option>
+                                                        <option value="what_the_forge" data-search="">整活锻炉 - What The Forge</option>
+                                                        <option value="final_reserves" data-search="">最后储备 - Final Reserves</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <button type="button" id="add-player2-content-btn" class="btn btn-primary">Add Champion</button>
                     <!-- 第二列的内容结束 -->
                 </div>
             </div>
