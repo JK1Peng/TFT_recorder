@@ -306,7 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var addPlayer1ContentBtn = document.getElementById('add-player1-content-btn');
 
     addPlayer1ContentBtn.addEventListener('click', function() {
-        var currentTimeStamp = new Date().getTime(); // 用时间戳确保ID的唯一性
+        var currentTimeStamp = new Date().getTime(); 
         var itemCounter = 0;
         var newChampionCardHTML = `
             <div class="card custom-card-champion border-dark mb-3">
@@ -888,7 +888,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     
         $(`.stars-select-${timeStamp}`).next('.select2-container').css({
-            'width': '100%',
+            'width': '120%',
          
         });
     
@@ -993,10 +993,36 @@ document.addEventListener('DOMContentLoaded', function() {
   
 $(document).ready(function() {
 
+    function hexOption(option) {
+        if (!option.id) {
+            return option.text;
+        }
+        var baseUrl = "/frontend/hex_icon";
+        var $option = $(`<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`);
+        return $option;
+    }
+
+    function portalOption(option) {
+        if (!option.id) {
+            return option.text;
+        }
+        var baseUrl = "/frontend/portal_icon";
+        var $option = $(`<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`);
+        return $option;
+    }
 
     $(`.portal-select,.hex-select`).select2({
         placeholder: "搜索",
-        allowClear: true
+        allowClear: true,
+        templateResult: hexOption, // 使用 hexOption 函数为结果模板
+        templateSelection: hexOption, // 使用 hexOption 函数为选择模板
+    });
+
+    $(`.portal-select`).select2({
+        placeholder: "搜索",
+        allowClear: true,
+        templateResult: portalOption, // 使用 hexOption 函数为结果模板
+        templateSelection: portalOption, // 使用 hexOption 函数为选择模板
     });
     
     $(`.portal-select`).next('.select2-container').css({
@@ -1020,6 +1046,5 @@ $(document).ready(function() {
             });
         }, 0);
     });
-
 
 });
