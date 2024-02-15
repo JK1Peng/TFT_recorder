@@ -302,6 +302,9 @@
 //     }
     
 // };
+
+  
+
 document.addEventListener('DOMContentLoaded', function() {
     var addPlayer1ContentBtn = document.getElementById('add-player1-content-btn');
     var addPlayer2ContentBtn = document.getElementById('add-player2-content-btn');
@@ -1518,13 +1521,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
+    
     
 });
 
 
   
 $(document).ready(function() {
+
+    
 
     function hexOption(option) {
         if (!option.id) {
