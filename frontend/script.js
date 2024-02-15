@@ -303,15 +303,19 @@
     
 // };
 
-  
+var counters = {
+    player1: 0,
+    player2: 0
+};
+
 
 document.addEventListener('DOMContentLoaded', function() {
     var addPlayer1ContentBtn = document.getElementById('add-player1-content-btn');
     var addPlayer2ContentBtn = document.getElementById('add-player2-content-btn');
-
+    var submitBtn = document.getElementById('submitFormBtn');
     addPlayer1ContentBtn.addEventListener('click', function() {
         var currentTimeStamp = new Date().getTime(); 
-        var itemCounter = 0;
+        counters.player1 += 1;
         var newChampionCardHTML = `
             <div class="card custom-card-champion border-dark mb-3">
                 <div class="card-body">
@@ -325,7 +329,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <!-- Champions select -->
                         <div class="col-2-5">
                             <div class="champion-title">英雄</div>
-                            <select name="champion" class="select2-search champions-select-${currentTimeStamp}" required>
+                            <select name="player1-champion-${counters.player1}" class="select2-search champions-select-${currentTimeStamp}" required>
                                 <option value="" disabled selected>请选择一个选项</option>
                                 <option value="corki" data-search="飞机">库奇-Corki</option>
                                 <option value="tahmkench" data-search="蛤蟆" >塔姆肯奇-TahmKench</option>
@@ -379,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                          <div class="col-2-5">
                             <div class="headliners-title">天选</div>
-                            <select name="headliner" class="select2-search headliners-select-${currentTimeStamp}">
+                            <select name="player1-headliner-${counters.player1}" class="select2-search headliners-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="origin_8bit" >8-bit_8比特</option>
                                 <option value="origin_country">Country_乡村音乐</option>
@@ -414,8 +418,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>                          
                         <!-- Star select -->
                         <div class="col-1-5">
-                            <div name="star" class="star-title">星级</div>
-                            <select class="select2-search stars-select-${currentTimeStamp}" required>
+                            <div class="star-title">星级</div>
+                            <select name="player1-star-${counters.player1}" class="select2-search stars-select-${currentTimeStamp}" required>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>
@@ -424,7 +428,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <!-- Items select -->
                         <div class="col-4-5">
                             <div class="item-title">装备</div>
-                            <select name="item1" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player1-item1-${counters.player1}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -560,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>                                
                         </select>
                             </select>
-                            <select name="item2" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player1-item2-${counters.player1}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -695,7 +699,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <option value="superfan_emblem" data-search="超级粉丝转">Superfan Emblem</option>
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>        
                             </select>
-                            <select name="item3" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player1-item3-${counters.player1}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -843,6 +847,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     addPlayer2ContentBtn.addEventListener('click', function() {
+        counters.player2 += 1;
         var currentTimeStamp = new Date().getTime(); 
         var newChampionCardHTML = `
             <div class="card custom-card-champion border-dark mb-3">
@@ -857,7 +862,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <!-- Champions select -->
                         <div class="col-2-5">
                             <div class="champion-title">英雄</div>
-                            <select name="champion" class="select2-search champions-select-${currentTimeStamp}" required>
+                            <select name="player2-champion-${counters.player2}" class="select2-search champions-select-${currentTimeStamp}" required>
                                 <option value="" disabled selected>请选择一个选项</option>
                                 <option value="corki" data-search="飞机">库奇-Corki</option>
                                 <option value="tahmkench" data-search="蛤蟆" >塔姆肯奇-TahmKench</option>
@@ -911,7 +916,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                          <div class="col-2-5">
                             <div class="headliners-title">天选</div>
-                            <select name="headliner" class="select2-search headliners-select-${currentTimeStamp}">
+                            <select name="player2-headliner-${counters.player2}" class="select2-search headliners-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="origin_8bit" >8-bit_8比特</option>
                                 <option value="origin_country">Country_乡村音乐</option>
@@ -946,7 +951,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>                          
                         <!-- Star select -->
                         <div class="col-1-5">
-                            <div name="star" class="star-title">星级</div>
+                            <div name="player2-star-${counters.player2}" class="star-title">星级</div>
                             <select class="select2-search stars-select-${currentTimeStamp}" required>
                                <option value="1">1</option>
                                <option value="2">2</option>
@@ -956,7 +961,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <!-- Items select -->
                         <div class="col-4-5">
                             <div class="item-title">装备</div>
-                            <select name="item1" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player2-item1-${counters.player2}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -1092,7 +1097,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>                                
                         </select>
                             </select>
-                            <select name="item2" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player2-item2-${counters.player2}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -1227,7 +1232,7 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <option value="superfan_emblem" data-search="超级粉丝转">Superfan Emblem</option>
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>        
                             </select>
-                            <select name="item3" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="player3-item3-${counters.player2}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -1374,7 +1379,25 @@ document.addEventListener('DOMContentLoaded', function() {
         bindDeleteEvent();
     });
 
-    
+    submitBtn.addEventListener('click', function() {
+        // 获取表单元素
+        var form = document.getElementById('player1-form');
+        
+        // 创建一个 FormData 对象
+        var formData = new FormData(form);
+        
+        // 创建一个空对象来存储表单数据
+        var formObj = {};
+
+        // 遍历 FormData 来填充 formObj 对象
+        for (var pair of formData.entries()) {
+            formObj[pair[0]] = pair[1];
+        }
+        
+        // 在控制台显示表单数据
+        console.log(formObj);
+    });
+
     function initializeSelect2ForNewCard(timeStamp) {
 
         $(`.headliners-select-${timeStamp}`).select2({
