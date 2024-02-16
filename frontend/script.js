@@ -321,14 +321,27 @@ document.addEventListener('DOMContentLoaded', function() {
     var addPlayer1ContentBtn = document.getElementById('add-player1-content-btn');
     var addPlayer2ContentBtn = document.getElementById('add-player2-content-btn');
     var submitBtn = document.getElementById('submitFormBtn');
-    addPlayer1ContentBtn.addEventListener('click', function() {
-        addChampionCard("match1","player1")
-        addChampionCard("match2","player1")
+    // addPlayer1ContentBtn.addEventListener('click', function() {
+    //     addChampionCard("match1","player1")
+    //     addChampionCard("match2","player1")
+    // });
+
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('custom-add-button') && e.target.dataset.player === 'player1') {
+            document.querySelectorAll('[data-player="player1"]').forEach(btn => {
+                addChampionCard(btn.dataset.panel, "player1");
+            });
+        }
+        if (e.target.classList.contains('custom-add-button') && e.target.dataset.player === 'player2') {
+            document.querySelectorAll('[data-player="player2"]').forEach(btn => {
+                addChampionCard(btn.dataset.panel, "player2");
+            });
+        }
     });
 
-    addPlayer2ContentBtn.addEventListener('click', function() {
-        addChampionCard("match1","player2")
-    });
+    // addPlayer2ContentBtn.addEventListener('click', function() {
+    //     addChampionCard("match1","player2")
+    // });
 
     submitBtn.addEventListener('click', function() {
         // 获取表单元素
@@ -951,7 +964,7 @@ function addChampionCard(panelId, player) {
 
     $(`#${panelId}-${player}-container-top`).append(newChampionCardHTML);
     initializeSelect2ForNewCard(currentTimeStamp);
-    bindDeleteEvent(); // 如果有的话
+    bindDeleteEvent(); 
 }
 
 
