@@ -37,11 +37,15 @@
     border-width: 3px;
 }
 
-#player1-container-top {
+#match1-player1-container-top,
+#match1-player2-container-top,
+#match2-player1-container-top,
+#match2-player2-container-top {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     min-height: 100px;
 }
+
 
 #player1-container-bottom {
     margin-top: 20px;

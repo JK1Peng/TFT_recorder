@@ -22,42 +22,42 @@
             <div class="card-header custom-card-header">
                 <ul class="nav nav-tabs custom-card-header-tab card-header-tabs" id="myTab">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="player1-tab" data-bs-toggle="tab" data-bs-target="#player1" type="button" role="tab" aria-controls="player1" aria-selected="true">1</button>
+                        <button class="nav-link active" id="match1-tab" data-bs-toggle="tab" data-bs-target="#match1" type="button" role="tab" aria-controls="match1" aria-selected="true">1</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player2-tab" data-bs-toggle="tab" data-bs-target="#player2" type="button" role="tab" aria-controls="player2" aria-selected="true">2</button>
+                        <button class="nav-link" id="match2-tab" data-bs-toggle="tab" data-bs-target="#match2" type="button" role="tab" aria-controls="match2" aria-selected="true">2</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player3-tab" data-bs-toggle="tab" data-bs-target="#player3" type="button" role="tab" aria-controls="player3" aria-selected="true">3</button>
+                        <button class="nav-link" id="match3-tab" data-bs-toggle="tab" data-bs-target="#match3" type="button" role="tab" aria-controls="match3" aria-selected="true">3</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player4-tab" data-bs-toggle="tab" data-bs-target="#player4" type="button" role="tab" aria-controls="player4" aria-selected="true">4</button>
+                        <button class="nav-link" id="match4-tab" data-bs-toggle="tab" data-bs-target="#match4" type="button" role="tab" aria-controls="match4" aria-selected="true">4</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player5-tab" data-bs-toggle="tab" data-bs-target="#player5" type="button" role="tab" aria-controls="player5" aria-selected="true">5</button>
+                        <button class="nav-link" id="match5-tab" data-bs-toggle="tab" data-bs-target="#match5" type="button" role="tab" aria-controls="match5" aria-selected="true">5</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player6-tab" data-bs-toggle="tab" data-bs-target="#player6" type="button" role="tab" aria-controls="player6" aria-selected="true">6</button>
+                        <button class="nav-link" id="match6-tab" data-bs-toggle="tab" data-bs-target="#match6" type="button" role="tab" aria-controls="match6" aria-selected="true">6</button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="player7-tab" data-bs-toggle="tab" data-bs-target="#player7" type="button" role="tab" aria-controls="player7" aria-selected="true">7</button>
+                        <button class="nav-link" id="match7-tab" data-bs-toggle="tab" data-bs-target="#match7" type="button" role="tab" aria-controls="match7" aria-selected="true">7</button>
                     </li>
                 </ul>
             </div>
         
             <div class="tab-content" id="myTabContent">
                 
-               <div class="tab-pane fade show active" id="player1" role="tabpanel" aria-labelledby="player1-tab">
-                    <form id="player1-form">
+               <div class="tab-pane fade show active" id="match1" role="tabpanel" aria-labelledby="player1-tab">
+                    <form id="match1-form">
                             <div class="card-body row"> 
                                 <div class="col-6 text-right border-right custom-border-end">
                                     <div class="row">
                                         <div class="col-12">
-                                            <div id="player1-container-top">
+                                            <div id="match1-player1-container-top">
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" id="add-player1-content-btn" class="btn btn-primary custom-add-button">Add Champion</button>
+                                    <button type="button" data-panel="match1" data-player="player1" id="add-player1-content-btn" class="btn btn-primary custom-add-button">Add Champion</button>
                                     <div class="row">
                                         <div class="col-12">
                                             <div id="player1-container-bottom">
@@ -715,7 +715,7 @@
                                     <!-- 第二列的内容开始 -->
                                     <div class="row">
                                         <div class="col-12">
-                                            <div id="player2-container-top">
+                                            <div id="match1-player2-container-top">
                                                 <!-- 第二列的第一行内容 -->
                                             </div>
                                         </div>
@@ -1389,18 +1389,18 @@
                             </div>
                     </form>  
                 </div>
-                
-                <div class="tab-pane fade" id="player2" role="tabpanel" aria-labelledby="player2-tab">
-                    <form id="player2-form">
+
+                <div class="tab-pane fade" id="match2" role="tabpanel" aria-labelledby="player2-tab">
+                    <form id="match1-form">
                             <div class="card-body row"> 
                                 <div class="col-6 text-right border-right custom-border-end">
                                     <div class="row">
                                         <div class="col-12">
-                                            <div id="player1-container-top">
+                                            <div id="match2-player1-container-top">
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" id="add-player1-content-btn" class="btn btn-primary custom-add-button">Add Champion</button>
+                                    <button type="button"  data-panel="match2" data-player="player1" id="add-player1-content-btn" class="btn btn-primary custom-add-button">Add Champion</button>
                                     <div class="row">
                                         <div class="col-12">
                                             <div id="player1-container-bottom">
@@ -1408,7 +1408,7 @@
                                                     <div class="col-4-5">
                                                         <div class="card custom-card-hextech border-dark mb-3">
                                                             <div class="portal-title">传送门</div>
-                                                            <select name="portal" class="select2-search portal-select">
+                                                            <select name="portal1" class="select2-search portal-select">
                                                                 <option value="3_champions" data-search="">3弈子-3 champions</option>
                                                                 <option value="3_cost_champion" data-search="">3费弈子-3 cost champion</option>
                                                                 <option value="artifact_anvil" data-search="">神器锻造器-artifact anvil</option>
@@ -1455,7 +1455,7 @@
                                                             <div class="hextech-title">海克斯</div>
                                                             <div class="row">
                                                                 <div class="col-4 tight-padding"> 
-                                                                    <select name="hex1" class="select2-search hex-select" required>
+                                                                    <select name="hex1-1" class="select2-search hex-select" required>
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -1652,7 +1652,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-4 tight-padding"> 
-                                                                    <select name="hex2" class="select2-search hex-select">
+                                                                    <select name="hex1-2" class="select2-search hex-select">
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -1849,7 +1849,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-4 tight-padding">                                                     
-                                                                    <select name="hex3" class="select2-search hex-select">
+                                                                    <select name="hex1-3" class="select2-search hex-select">
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -2058,7 +2058,7 @@
                                     <!-- 第二列的内容开始 -->
                                     <div class="row">
                                         <div class="col-12">
-                                            <div id="player2-container-top">
+                                            <div id="match2-player2-container-top">
                                                 <!-- 第二列的第一行内容 -->
                                             </div>
                                         </div>
@@ -2071,7 +2071,7 @@
                                                     <div class="col-4-5">
                                                         <div class="card custom-card-hextech border-dark mb-3">
                                                             <div class="portal-title">传送门</div>
-                                                                <select name="portal" class="select2-search portal-select">
+                                                                <select name="portal2" class="select2-search portal-select">
                                                                     <option value="3_champions" data-search="">3弈子-3 champions</option>
                                                                     <option value="3_cost_champion" data-search="">3费弈子-3 cost champion</option>
                                                                     <option value="artifact_anvil" data-search="">神器锻造器-artifact anvil</option>
@@ -2118,7 +2118,7 @@
                                                             <div class="hextech-title">海克斯</div>
                                                             <div class="row">
                                                                 <div class="col-4 tight-padding"> 
-                                                                    <select name="hex1" class="select2-search hex-select" required>
+                                                                    <select name="hex2-1" class="select2-search hex-select" required>
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -2315,7 +2315,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-4 tight-padding"> 
-                                                                    <select name="hex2" class="select2-search hex-select">
+                                                                    <select name="hex2-2" class="select2-search hex-select">
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -2511,7 +2511,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-4 tight-padding">                                                     
-                                                                    <select name="hex3" class="select2-search hex-select">
+                                                                    <select name="hex2-3" class="select2-search hex-select">
                                                                         <option value="none" selected></option>
                                                                         <option value="missed_connections" data-search="">别再错过 - Missed Connections</option>
                                                                         <option value="vampirism_1" data-search="">吸血习性 I - Vampirism I</option>
@@ -2726,7 +2726,7 @@
                                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" value="lose" autocomplete="off" >
                                         <label class="btn btn-outline-danger" for="btnradio1">Lose</label>
                                     </div>
-                                    <button type="button" class="btn btn-primary custom-button btn-sm">submit form</button>
+                                    <button type="button" id="submitFormBtn" class="btn btn-primary custom-button btn-sm">submit form</button>
                                     
                                 </div>
                             </div>
