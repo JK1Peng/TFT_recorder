@@ -381,21 +381,28 @@ document.addEventListener('DOMContentLoaded', function() {
             var panelName = this.getAttribute('data-panel');
             var formId = `${panelName}-form`;
             var form = document.getElementById(formId);
-
+    
             if (form && form.checkValidity()) {
-                form.reportValidity(); 
-                var formData = new FormData(form);
-                var formObj = {};
-                for (var pair of formData.entries()) {
-                    formObj[pair[0]] = pair[1];
+                var isConfirmed = confirm("Are you sure you want to submit this form?");
+                if (isConfirmed) {
+                    // 用户确认提交
+                    form.reportValidity();
+                    var formData = new FormData(form);
+                    var formObj = {};
+                    for (var pair of formData.entries()) {
+                        formObj[pair[0]] = pair[1];
+                    }
+                    console.log(formObj); 
+                } else {
+                    console.log('User cancelled the form submission.');
                 }
-                console.log(formObj); 
             } else {
                 console.error('Form not found or validation failed for panel:', panelName);
-                form.reportValidity(); 
+                form.reportValidity();
             }
         });
     });
+    
     
     
 });
