@@ -308,23 +308,57 @@ var counters = {
     player2: 0
 };
 
-// document.addEventListener('click', function(e) {
-//     if (e.target.classList.contains('custom-add-button')) {
-//         const panelId = e.target.getAttribute('data-panel');
-//         console.log(panelId)
-//         const playerId = e.target.getAttribute('data-player');
-//         addChampionCard(panelId, playerId);
-//     }
-// });
 
 document.addEventListener('DOMContentLoaded', function() {
-    var addPlayer1ContentBtn = document.getElementById('add-player1-content-btn');
-    var addPlayer2ContentBtn = document.getElementById('add-player2-content-btn');
-    var submitBtn = document.getElementById('submitFormBtn');
-    // addPlayer1ContentBtn.addEventListener('click', function() {
-    //     addChampionCard("match1","player1")
-    //     addChampionCard("match2","player1")
-    // });
+
+    $('.select2-search[data-player="player1"]').on('select2:select', function(e) {
+        var selectedValue = $(this).val(); 
+        var selectType = $(this).data('select-type'); 
+    
+        $('.select2-search[data-player="player1"][data-select-type="' + selectType + '"]').not(this).each(function() {
+            $(this).val(selectedValue).trigger('change');
+        });
+
+        if(selectType === 'portal'){
+            $('.select2-search[data-player="player2"][data-select-type="' + selectType + '"]').not(this).each(function() {
+                $(this).val(selectedValue).trigger('change');
+            });
+        }
+        
+    });
+    document.querySelectorAll('.nav-link').forEach(function(tab) {
+            tab.addEventListener('dblclick', function(e) {
+                e.stopPropagation();
+
+                if (this.querySelector('input')) return;
+
+
+                var currentText = this.textContent;
+                this.textContent = '';
+                var input = document.createElement('input');
+                input.type = 'text';
+                input.value = currentText;
+                input.className = 'tab-title-input'; 
+
+                this.appendChild(input);
+                input.focus();
+
+                input.addEventListener('blur', function() {
+                    var newText = this.value;
+                    this.parentNode.removeChild(this);
+                    tab.textContent = newText;
+                });
+
+                input.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        var newText = this.value;
+
+                        this.parentNode.removeChild(this);
+                        tab.textContent = newText;
+                    }
+                });
+        });
+    });
 
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('custom-add-button') && e.target.dataset.player === 'player1') {
@@ -332,36 +366,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 addChampionCard(btn.dataset.panel, "player1");
             });
         }
-        if (e.target.classList.contains('custom-add-button') && e.target.dataset.player === 'player2') {
-            document.querySelectorAll('[data-player="player2"]').forEach(btn => {
-                addChampionCard(btn.dataset.panel, "player2");
-            });
-        }
     });
 
-    // addPlayer2ContentBtn.addEventListener('click', function() {
-    //     addChampionCard("match1","player2")
-    // });
-
-    submitBtn.addEventListener('click', function() {
-        // 获取表单元素
-        var form = document.getElementById('match1-form');
-        
-        // 创建一个 FormData 对象
-        var formData = new FormData(form);
-        
-        // 创建一个空对象来存储表单数据
-        var formObj = {};
-
-        // 遍历 FormData 来填充 formObj 对象
-        for (var pair of formData.entries()) {
-            formObj[pair[0]] = pair[1];
-        }
-        
-        // 在控制台显示表单数据
-        console.log(formObj);
+    document.querySelectorAll('[data-player="player2"]').forEach(button => {
+        button.addEventListener('click', function() {
+            var panelId = this.dataset.panel; 
+            addChampionCard(panelId, "player2");
+        });
     });
+    
 
+    document.querySelectorAll('.btn.btn-primary.custom-button.btn-sm').forEach(function(button) {
+        button.addEventListener('click', function() {
+            var panelName = this.getAttribute('data-panel');
+            var formId = `${panelName}-form`;
+            var form = document.getElementById(formId);
+
+            if (form && form.checkValidity()) {
+                form.reportValidity(); 
+                var formData = new FormData(form);
+                var formObj = {};
+                for (var pair of formData.entries()) {
+                    formObj[pair[0]] = pair[1];
+                }
+                console.log(formObj); 
+            } else {
+                console.error('Form not found or validation failed for panel:', panelName);
+                form.reportValidity(); 
+            }
+        });
+    });
+    
     
 });
 
@@ -389,18 +424,18 @@ $(document).ready(function() {
         return $option;
     }
 
-    $(`.portal-select,.hex-select`).select2({
-        placeholder: "搜索",
+    $(`.hex-select`).select2({
+        placeholder: "请选择",
         allowClear: true,
-        templateResult: hexOption, // 使用 hexOption 函数为结果模板
-        templateSelection: hexOption, // 使用 hexOption 函数为选择模板
+        templateResult: hexOption, 
+        templateSelection: hexOption, 
     });
 
     $(`.portal-select`).select2({
-        placeholder: "搜索",
+        placeholder: "请选择",
         allowClear: true,
-        templateResult: portalOption, // 使用 hexOption 函数为结果模板
-        templateSelection: portalOption, // 使用 hexOption 函数为选择模板
+        templateResult: portalOption,
+        templateSelection: portalOption, 
     });
     
     $(`.portal-select`).next('.select2-container').css({
@@ -428,10 +463,8 @@ $(document).ready(function() {
 });
 
 function addChampionCard(panelId, player) {
-    // 构造一个独特的计数器键，例如 "game1-player1"
     var counterKey = panelId + '-' + player;
-    
-    // 初始化或更新计数器
+
     if (!counters[counterKey]) {
         counters[counterKey] = 1;
     } else {
@@ -440,7 +473,7 @@ function addChampionCard(panelId, player) {
     
     var currentTimeStamp = new Date().getTime();
     var newChampionCardHTML = `
-            <div class="card custom-card-champion border-dark mb-3">
+            <div class="card custom-card-champion border-dark mb-3" data-card-id="champion${counters[counterKey]}" data-player="${player}">
                 <div class="card-body">
                     <div class="row">
                         <!-- Delete button -->
@@ -452,8 +485,8 @@ function addChampionCard(panelId, player) {
                         <!-- Champions select -->
                         <div class="col-2-5">
                             <div class="champion-title">英雄</div>
-                            <select name="${player}-champion-${counters[counterKey]}" class="select2-search champions-select-${currentTimeStamp}" required>
-                                <option value="" disabled selected>请选择一个选项</option>
+                            <select name="${player}-champion-${counters[counterKey]}" data-player="${player}" data-select-type="champion${counters[counterKey]}" class="select2-search champions-select-${currentTimeStamp}" required>
+                                <option value="" disabled selected>Select your option</option>
                                 <option value="corki" data-search="飞机">库奇-Corki</option>
                                 <option value="tahmkench" data-search="蛤蟆" >塔姆肯奇-TahmKench</option>
                                 <option value="nami" data-search="唤潮鲛姬">娜美-Nami</option>
@@ -506,7 +539,7 @@ function addChampionCard(panelId, player) {
                         </div>
                          <div class="col-2-5">
                             <div class="headliners-title">天选</div>
-                            <select name="${player}-headliner-${counters[counterKey]}" class="select2-search headliners-select-${currentTimeStamp}">
+                            <select name="${player}-headliner-${counters[counterKey]}" data-player="${player}" data-select-type="trait${counters[counterKey]}" class="select2-search headliners-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="origin_8bit" >8-bit_8比特</option>
                                 <option value="origin_country">Country_乡村音乐</option>
@@ -542,7 +575,7 @@ function addChampionCard(panelId, player) {
                         <!-- Star select -->
                         <div class="col-1-5">
                             <div class="star-title">星级</div>
-                            <select name="${player}-star-${counters[counterKey]}" class="select2-search stars-select-${currentTimeStamp}" required>
+                            <select name="${player}-star-${counters[counterKey]}" data-player="${player}" data-select-type="star${counters[counterKey]}" class="select2-search stars-select-${currentTimeStamp}" required>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>
@@ -551,7 +584,7 @@ function addChampionCard(panelId, player) {
                         <!-- Items select -->
                         <div class="col-4-5">
                             <div class="item-title">装备</div>
-                            <select name="${player}-item1-${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="${player}-item1-${counters[counterKey]}" data-player="${player}" data-select-type="item1${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -687,7 +720,7 @@ function addChampionCard(panelId, player) {
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>                                
                         </select>
                             </select>
-                            <select name="${player}-item2-${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="${player}-item2-${counters[counterKey]}" data-player="${player}" data-select-type="item2${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -822,7 +855,7 @@ function addChampionCard(panelId, player) {
                                 <option value="superfan_emblem" data-search="超级粉丝转">Superfan Emblem</option>
                                 <option value="true_damage_emblem" data-search="真实伤害转">True Damage Emblem</option>        
                             </select>
-                            <select name="${player}-item3-${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
+                            <select name="${player}-item3-${counters[counterKey]}" data-player="${player}" data-select-type="item3${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
                                 <option value="bf_sword" data-search="暴风大剑">B.F. Sword</option>
                                 <option value="recurve_bow" data-search="反曲弓">Recurve Bow</option>
@@ -967,7 +1000,6 @@ function addChampionCard(panelId, player) {
     bindDeleteEvent(); 
 }
 
-
 function initializeSelect2ForNewCard(timeStamp) {
 
     $(`.headliners-select-${timeStamp}`).select2({
@@ -1002,7 +1034,7 @@ function initializeSelect2ForNewCard(timeStamp) {
 
 
     $(`.stars-select-${timeStamp}`).select2({
-        placeholder: "搜索",
+        placeholder: "请选择",
         allowClear: true,
     });
 
@@ -1084,8 +1116,11 @@ function initializeSelect2ForNewCard(timeStamp) {
 }
 
 function bindDeleteEvent() {
-    $('.delete-champion').off('click').on('click', function() {
-        $(this).closest('.custom-card-champion').remove();
+    $(document).on('click', '.delete-champion', function() {
+        var cardId = $(this).closest('.custom-card-champion').data('card-id');
+        var playerType = $(this).closest('.custom-card-champion').data('player');
+        
+        $(`.custom-card-champion[data-card-id="${cardId}"][data-player="${playerType}"]`).remove();
     });
     
 }
