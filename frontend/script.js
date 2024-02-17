@@ -381,21 +381,45 @@ document.addEventListener('DOMContentLoaded', function() {
             var panelName = this.getAttribute('data-panel');
             var formId = `${panelName}-form`;
             var form = document.getElementById(formId);
-
+    
             if (form && form.checkValidity()) {
-                form.reportValidity(); 
-                var formData = new FormData(form);
-                var formObj = {};
-                for (var pair of formData.entries()) {
-                    formObj[pair[0]] = pair[1];
+                var isConfirmed = confirm("Are you sure you want to submit this form?");
+                if (isConfirmed) {
+                    var formData = new FormData(form);
+                    var formObj = {};
+                    for (var pair of formData.entries()) {
+                        formObj[pair[0]] = pair[1];
+                    }
+                    console.log(formObj); 
+
+                    fetch('http://127.0.0.1:5000/submit', { 
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formObj), 
+                        mode: 'cors'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert(data.message);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert(data.message);
+                    });
+    
+                } else {
+                    console.log('User cancelled the form submission.');
                 }
-                console.log(formObj); 
             } else {
                 console.error('Form not found or validation failed for panel:', panelName);
-                form.reportValidity(); 
+                form.reportValidity();
             }
         });
     });
+    
     
     
 });
@@ -414,7 +438,7 @@ $(document).ready(function() {
         var $option = $(`<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`);
         return $option;
     }
-
+    
     function portalOption(option) {
         if (!option.id) {
             return option.text;
@@ -601,7 +625,7 @@ function addChampionCard(panelId, player) {
                                 <option value="blood_thirster" data-search="饮血剑">Bloodthirster</option>
                                 <option value="hextech_gunblade" data-search="海克斯科技枪">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀">Spear of Shojin</option>
-                                <option value="steraks_gage data-search="血手"">Sterak's Gage</option>
+                                <option value="steraks_gage" data-search="血手"">Sterak's Gage</option>
                                 <option value="infinity_edge" data-search="无尽之刃">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决">Titan's Resolve</option>
@@ -632,7 +656,7 @@ function addChampionCard(panelId, player) {
                                 <option value="guardbreaker" data-search="挺进破坏者 破盾">Guardbreaker</option>
                                 <option value="thiefs_gloves"data-search="偷偷 窃贼手套">Thief's Gloves</option>
                                 <option value="tacticians_crown"data-search="冠冕 自然之力">Tactician's Crown</option>
-                                <option value="aegis_of_the_legiondata-search="辅助装 军团圣盾"">Aegis of the Legion</option>
+                                <option value="aegis_of_the_legion" data-search="辅助装 军团圣盾"">Aegis of the Legion</option>
                                 <option value="banshees_veil" data-search="辅助装 女妖">Banshee's Veil</option>
                                 <option value="chalice_of_power" data-search="辅助装 圣杯">Chalice of Power</option>
                                 <option value="locket_of_the_iron_solari" data-search="辅助装 鸟盾">Locket of the Iron Solari</option>
@@ -658,7 +682,7 @@ function addChampionCard(panelId, player) {
                                 <option value="manazane" data-search="奥恩神器 魔切">Manazane</option>
                                 <option value="moguls_mail" data-search="奥恩神器 大亨之铠">Mogul's Mail</option>
                                 <option value="snipers_focus" data-search="奥恩神器 狙击手的专注">Sniper's Focus</option>
-                                <option value="tricksters_glass data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
+                                <option value="tricksters_glass" data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
                                 <option value="zhonyas_paradox" data-search="奥恩神器 中亚 中娅沙漏">Zhonya's Paradox</option>
                                 <option value="absolution" data-search="光明 救赎">Absolution</option>
                                 <option value="blessed_bloodthirster"data-search="光明 饮血剑">Blessed Bloodthirster</option>
@@ -737,7 +761,7 @@ function addChampionCard(panelId, player) {
                                 <option value="blood_thirster" data-search="饮血剑">Bloodthirster</option>
                                 <option value="hextech_gunblade" data-search="海克斯科技枪">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀">Spear of Shojin</option>
-                                <option value="steraks_gage data-search="血手"">Sterak's Gage</option>
+                                <option value="steraks_gage" data-search="血手"">Sterak's Gage</option>
                                 <option value="infinity_edge" data-search="无尽之刃">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决">Titan's Resolve</option>
@@ -768,7 +792,7 @@ function addChampionCard(panelId, player) {
                                 <option value="guardbreaker" data-search="挺进破坏者 破盾">Guardbreaker</option>
                                 <option value="thiefs_gloves"data-search="偷偷 窃贼手套">Thief's Gloves</option>
                                 <option value="tacticians_crown"data-search="冠冕 自然之力">Tactician's Crown</option>
-                                <option value="aegis_of_the_legiondata-search="辅助装 军团圣盾"">Aegis of the Legion</option>
+                                <option value="aegis_of_the_legion" data-search="辅助装 军团圣盾"">Aegis of the Legion</option>
                                 <option value="banshees_veil" data-search="辅助装 女妖">Banshee's Veil</option>
                                 <option value="chalice_of_power" data-search="辅助装 圣杯">Chalice of Power</option>
                                 <option value="locket_of_the_iron_solari" data-search="辅助装 鸟盾">Locket of the Iron Solari</option>
@@ -794,7 +818,7 @@ function addChampionCard(panelId, player) {
                                 <option value="manazane" data-search="奥恩神器 魔切">Manazane</option>
                                 <option value="moguls_mail" data-search="奥恩神器 大亨之铠">Mogul's Mail</option>
                                 <option value="snipers_focus" data-search="奥恩神器 狙击手的专注">Sniper's Focus</option>
-                                <option value="tricksters_glass data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
+                                <option value="tricksters_glass" data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
                                 <option value="zhonyas_paradox" data-search="奥恩神器 中亚 中娅沙漏">Zhonya's Paradox</option>
                                 <option value="absolution" data-search="光明 救赎">Absolution</option>
                                 <option value="blessed_bloodthirster"data-search="光明 饮血剑">Blessed Bloodthirster</option>
@@ -872,7 +896,7 @@ function addChampionCard(panelId, player) {
                                 <option value="blood_thirster" data-search="饮血剑">Bloodthirster</option>
                                 <option value="hextech_gunblade" data-search="海克斯科技枪">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀">Spear of Shojin</option>
-                                <option value="steraks_gage data-search="血手"">Sterak's Gage</option>
+                                <option value="steraks_gage" data-search="血手"">Sterak's Gage</option>
                                 <option value="infinity_edge" data-search="无尽之刃">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决">Titan's Resolve</option>
@@ -903,7 +927,7 @@ function addChampionCard(panelId, player) {
                                 <option value="guardbreaker" data-search="挺进破坏者 破盾">Guardbreaker</option>
                                 <option value="thiefs_gloves"data-search="偷偷 窃贼手套">Thief's Gloves</option>
                                 <option value="tacticians_crown"data-search="冠冕 自然之力">Tactician's Crown</option>
-                                <option value="aegis_of_the_legiondata-search="辅助装 军团圣盾"">Aegis of the Legion</option>
+                                <option value="aegis_of_the_legion" data-search="辅助装 军团圣盾"">Aegis of the Legion</option>
                                 <option value="banshees_veil" data-search="辅助装 女妖">Banshee's Veil</option>
                                 <option value="chalice_of_power" data-search="辅助装 圣杯">Chalice of Power</option>
                                 <option value="locket_of_the_iron_solari" data-search="辅助装 鸟盾">Locket of the Iron Solari</option>
@@ -929,7 +953,7 @@ function addChampionCard(panelId, player) {
                                 <option value="manazane" data-search="奥恩神器 魔切">Manazane</option>
                                 <option value="moguls_mail" data-search="奥恩神器 大亨之铠">Mogul's Mail</option>
                                 <option value="snipers_focus" data-search="奥恩神器 狙击手的专注">Sniper's Focus</option>
-                                <option value="tricksters_glass data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
+                                <option value="tricksters_glass" data-search="奥恩神器 诡术师之镜 镜子"">Tricksters Glass</option>
                                 <option value="zhonyas_paradox" data-search="奥恩神器 中亚 中娅沙漏">Zhonya's Paradox</option>
                                 <option value="absolution" data-search="光明 救赎">Absolution</option>
                                 <option value="blessed_bloodthirster"data-search="光明 饮血剑">Blessed Bloodthirster</option>
