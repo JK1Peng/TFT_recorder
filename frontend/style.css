@@ -1,0 +1,223 @@
+/* style.css */
+.custom-card {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    margin-top: 1%;
+    min-height: 20vh;
+    text-align: center;
+    border-radius: 30px;
+    border-width: 3px;
+}
+
+.custom-card-champion{
+    height: 6%;
+    width: 100%;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+.select2-selection {
+    background-color: rgb(210, 209, 209) !important;
+}
+
+.custom-card-hextech{
+    height: 70%;
+    width: 80%;
+    margin-top: 30px;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+.custom-card-hextecha{
+    height: 70%;
+    width: 120%;
+    margin-top: 30px;
+    border-radius: 20px;
+    border-width: 3px;
+}
+
+#match1-player1-container-top,
+#match1-player2-container-top,
+#match2-player1-container-top,
+#match2-player2-container-top,
+#match3-player1-container-top,
+#match3-player2-container-top,
+#match4-player1-container-top,
+#match4-player2-container-top,
+#match5-player1-container-top,
+#match5-player2-container-top,
+#match6-player1-container-top,
+#match6-player2-container-top,
+#match7-player1-container-top,
+#match7-player2-container-top   {
+    display: flex;
+    flex-wrap: wrap;    
+    min-height: 100px;
+}
+
+
+
+#player1-container-bottom {
+    margin-top: 20px;
+    border-top: 2px solid black; 
+}
+
+
+#player2-container-bottom {
+    margin-top: 20px;
+    border-top: 2px solid black; 
+}
+
+
+.custom-tab-style {
+    color: rgb(0, 0, 0);
+    font-family: ""Arial""; 
+    font-size: 17px; 
+    font-weight: bold; 
+}
+
+.custom-btn-group {
+    /* margin-top: 80px;
+    margin-left: 40px;
+    width: 20%;  */
+    width: auto;
+}
+
+.custom-card-header-tab {
+    margin-left: 2%;
+}
+
+.custom-card-header {
+    border-bottom: 1px solid #000; 
+}
+
+
+.custom-vertical-line {
+    border-right: 2px solid #000; 
+    margin-left: 13%; 
+}
+
+
+.custom-row{
+    max-height: 1%;
+}
+
+.custom-border-end {
+    position: relative; 
+}
+
+.custom-border-end::after {
+    content: "";
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    right: 0; 
+    width: 2px; 
+    height: 104%; 
+    background: #000; 
+}
+
+.custom-button{
+    /* margin-left: 0%;
+    margin-bottom: 0%;
+    font-size: 1rem; 
+    padding: 0px 20px; 
+    width: 150px;
+    height: 25px; 
+    border-width: 1px; */
+    width: auto;
+}
+
+.custom-add-button{
+    margin-top: 0px; 
+}
+
+.traits-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.headliners-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.champion-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-right: 0px; 
+    margin-top: -15px; 
+}
+
+.star-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.item-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: -15px; 
+}
+
+.portal-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: 15px; 
+}
+
+.hextech-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
+    margin-top: 13px; 
+}
+
+.col-1-5 {
+    flex: 0 0 11%; 
+    max-width: 11%;
+}
+
+.col-2-5 {
+    flex: 0 0 20%; 
+    max-width: 20%;
+}
+
+.col-4-5 {
+    flex: 0 0 40%; 
+    max-width: 40%;
+}
+
+.col-5-5 {
+    flex: 0 0 50%; 
+    max-width: 50%;
+}
+
+.tight-padding {
+    padding-right: 13px; /* 减小右内边距 */
+    padding-left: 15px; /* 减小左内边距 */
+}
+
+.img-flag {
+    max-width: 100%; /* 限制图片的最大宽度，确保图片不会超过其容器宽度 */
+    max-height: 20px; /* 限制图片的最大高度，根据下拉菜单的高度进行调整 */
+    object-fit: contain; /* 保证图片的比例不变 */
+    margin-right: 5px; /* 在图片和文本之间添加一些间距 */
+    margin-bottom: 4px; /* 在图片和文本之间添加一些间距 */
+}
+
+
+body {
+    background-color: #f2e49f;
+}
+  
