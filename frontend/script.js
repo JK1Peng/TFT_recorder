@@ -311,21 +311,6 @@ var counters = {
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    $('.select2-search[data-player="player1"]').on('select2:select', function(e) {
-        var selectedValue = $(this).val(); 
-        var selectType = $(this).data('select-type'); 
-
-        $('.select2-search[data-player="player1"][data-select-type="' + selectType + '"]').not(this).each(function() {
-            $(this).val(selectedValue).trigger('change');
-        });
-
-        if(selectType === 'portal'){
-            $('.select2-search[data-player="player2"][data-select-type="' + selectType + '"]').not(this).each(function() {
-                $(this).val(selectedValue).trigger('change');
-            });
-        }
-        
-    });
     document.querySelectorAll('.nav-link').forEach(function(tab) {
             tab.addEventListener('dblclick', function(e) {
                 e.stopPropagation();
@@ -420,7 +405,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    
+
+    $(document).on('select2:select', '.select2-search[data-player="player1"]', function(e) {
+        var selectedValue = $(this).val(); 
+        var selectType = $(this).data('select-type'); 
+
+        $('.select2-search[data-player="player1"][data-select-type="' + selectType + '"]').not(this).each(function() {
+            $(this).val(selectedValue).trigger('change');
+        });
+
+        if(selectType === 'portal'){
+            $('.select2-search[data-player="player2"][data-select-type="' + selectType + '"]').not(this).each(function() {
+                $(this).val(selectedValue).trigger('change');
+            });
+        }
+    });
     
 });
 
@@ -1166,7 +1165,7 @@ function initializeSelect2ForNewCard(timeStamp) {
 }
 
 function bindDeleteEvent() {
-    $(document).on('click', '.delete-champion', function() {
+    $(document).on('click', '.delete-champion', function() {    
         var cardId = $(this).closest('.custom-card-champion').data('card-id');
         var playerType = $(this).closest('.custom-card-champion').data('player');
         
