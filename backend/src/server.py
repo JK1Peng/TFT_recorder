@@ -15,7 +15,7 @@ CORS(app)
 
 
 uri = os.getenv("mongodb_link")
-
+print(uri)
 mongo_client = MongoClient(uri)
 
 try:
