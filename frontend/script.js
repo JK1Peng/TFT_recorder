@@ -434,7 +434,7 @@ $(document).ready(function() {
         if (!option.id) {
             return option.text;
         }
-        var baseUrl = "/frontend/hex_icon";
+        var baseUrl = "/static/hex_icon";
         var $option = $(`<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`);
         return $option;
     }
@@ -443,7 +443,7 @@ $(document).ready(function() {
         if (!option.id) {
             return option.text;
         }
-        var baseUrl = "/frontend/portal_icon";
+        var baseUrl = "/static/portal_icon";
         var $option = $(`<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`);
         return $option;
     }
@@ -1100,7 +1100,7 @@ function initializeSelect2ForNewCard(timeStamp) {
             return option.text;
         }
     
-        var baseUrl = "/frontend/champion_icon";
+        var baseUrl = "/static/champion_icon";
 
         var $option = $(
             `<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.jpg" class="img-flag" /> ${option.text}</span>`
@@ -1114,7 +1114,7 @@ function initializeSelect2ForNewCard(timeStamp) {
         if (!option.id) {
             return option.text;
         }
-        var baseUrl = "/frontend/traits_icon";
+        var baseUrl = "/static/traits_icon";
 
         var $option = $(
             `<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`
@@ -1127,7 +1127,7 @@ function initializeSelect2ForNewCard(timeStamp) {
         if (!option.id) {
             return option.text;
         }
-        var baseUrl = "/frontend/item_icon";
+        var baseUrl = "/static/item_icon";
 
         var $option = $(
             `<span><img src="${baseUrl}/${option.element.value.toLowerCase()}.png" class="img-flag" /> ${option.text}</span>`

@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             console.log('Success:', data);
             if(data.success) {
-                window.location.href = '/frontend/index.html'; 
+                window.location.href = '/index.html'; 
             } else {
                 alert('Login failed: ' + data.message);
             }
