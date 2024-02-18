@@ -1061,23 +1061,51 @@ function initializeSelect2ForNewCard(timeStamp) {
     });
 
     
-    $(`.headliners-select-${timeStamp}`).next('.select2-container').css({
-        'width': '100%'
-    });
+    function setStyles() {
+        var screenWidth = window.innerWidth;
+        if (screenWidth <= 1000) { 
+            $(`.headliners-select-${timeStamp}`).next('.select2-container').css({
+                'width': '130%'
+            });
 
-    $(`.champions-select-${timeStamp}`).next('.select2-container').css({
-        'width': '100%',
-    });
+            $(`.champions-select-${timeStamp}`).next('.select2-container').css({
+                'width': '130%',
+            });
 
-    $(`.stars-select-${timeStamp}`).next('.select2-container').css({
-        'width': '120%',
-     
-    });
+            $(`.stars-select-${timeStamp}`).next('.select2-container').css({
+                'width': '400%',
+            });
 
-    $(`.items-select-${timeStamp}`).each(function() {
-        $(this).next('.select2-container').css({
-            'width': '30%',
-        });
+            $(`.items-select-${timeStamp}`).each(function() {
+                $(this).next('.select2-container').css({
+                    'width': '80%',
+                });
+            });
+        } else { 
+            $(`.headliners-select-${timeStamp}`).next('.select2-container').css({
+                'width': '80%'
+            });
+
+            $(`.champions-select-${timeStamp}`).next('.select2-container').css({
+                'width': '80%',
+            });
+
+            $(`.stars-select-${timeStamp}`).next('.select2-container').css({
+                'width': '120%',
+            });
+
+            $(`.items-select-${timeStamp}`).each(function() {
+                $(this).next('.select2-container').css({
+                    'width': '30%',
+                });
+            });
+        }
+    }
+
+    setStyles();
+
+    $(window).on('resize', function() {
+        setStyles();
     });
 
 
