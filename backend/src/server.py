@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
@@ -9,7 +9,7 @@ import os
 load_dotenv()
 function = Function()
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='../../frontend', static_url_path='')
 CORS(app)
 
 
@@ -30,7 +30,7 @@ db = mongo_client[DATABASE_NAME]
 
 @app.route('/')
 def login():
-    return app.send_static_file('login.html')
+    return send_from_directory(app.static_folder, 'login.html')
 
 
 @app.route('/submit', methods=['POST'])
