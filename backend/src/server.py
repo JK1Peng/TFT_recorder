@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, send_from_directory
+from flask import Flask, jsonify, request, send_from_directory, session
 from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
@@ -9,14 +9,17 @@ import os
 
 load_dotenv()
 function = Function()
+uri = os.getenv("mongodb_link")
+secret_key = os.getenv("SECRET_KEY")
 
 app = Flask(__name__, static_folder='../../frontend', static_url_path='')
+app.secret_key = secret_key
 CORS(app)
 
-
-uri = os.getenv("mongodb_link")
-print(uri)
+# print(secret_key)
+# print(uri)
 mongo_client = MongoClient(uri)
+
 
 try:
     mongo_client.admin.command('ping')
@@ -33,6 +36,11 @@ db = mongo_client[DATABASE_NAME]
 def login():
     return send_from_directory(app.static_folder, 'login.html')
 
+@app.route('/index')
+def index():
+    if 'logged_in' not in session or not session['logged_in']:
+        return send_from_directory(app.static_folder, 'login.html')
+    return send_from_directory(app.static_folder, 'index.html')
 
 @app.route('/submit', methods=['POST'])
 def submit_data():
@@ -53,9 +61,10 @@ def login_submit():
     user = db.account.find_one({'username': username, 'password': password})
 
     if user:
+        session['logged_in'] = True  # 设置会话标记为已登录
         return jsonify({'success': True, 'message': 'Login successful', 'user': {'username': user['username']}}), 200
     else:
-        return jsonify({'success': False, 'message': 'Invalid username or password'}), 401    
+        return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
 
 
 if __name__ == '__main__':
