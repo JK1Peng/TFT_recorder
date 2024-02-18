@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
             password: password
         };
 
-        fetch('http://127.0.0.1:5000/login', { 
+        fetch('https://coral-app-lwsnx.ondigitalocean.app:5000/login', { 
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json', 

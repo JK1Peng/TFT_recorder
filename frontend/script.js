@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     console.log(formObj); 
 
-                    fetch('http://127.0.0.1:5000/submit', { 
+                    fetch('https://coral-app-lwsnx.ondigitalocean.app:5000/submit', { 
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
@@ -427,8 +427,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
   
 $(document).ready(function() {
-
-    
 
     function hexOption(option) {
         if (!option.id) {
