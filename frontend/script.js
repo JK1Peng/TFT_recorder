@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
     $('.select2-search[data-player="player1"]').on('select2:select', function(e) {
         var selectedValue = $(this).val(); 
         var selectType = $(this).data('select-type'); 
-    
+
         $('.select2-search[data-player="player1"][data-select-type="' + selectType + '"]').not(this).each(function() {
             $(this).val(selectedValue).trigger('change');
         });
