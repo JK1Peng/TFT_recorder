@@ -29,8 +29,8 @@ db = mongo_client[DATABASE_NAME]
 
 
 @app.route('/')
-def index():
-    return "Hello, World!"
+def login():
+    return app.send_static_file('login.html')
 
 
 @app.route('/submit', methods=['POST'])
@@ -45,7 +45,7 @@ def submit_data():
         return jsonify(message="Data submission failed", error=str(e)), 500
 
 @app.route('/login', methods=['POST'])
-def login():
+def login_submit():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
