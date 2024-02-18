@@ -392,7 +392,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                     console.log(formObj); 
 
-                    fetch('https://coral-app-lwsnx.ondigitalocean.app:5000/submit', { 
+                    fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json',
