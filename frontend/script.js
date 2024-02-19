@@ -608,6 +608,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                         <div class="col-1-5">
                             <div class="star-title">星级</div>
                             <select name="${player}-star-${counters[counterKey]}" data-player="${player}" data-select-type="star${counters[counterKey]}" class="select2-search stars-select-${currentTimeStamp}" required>
+                               <option value="" disabled selected>Select your option</option>
                                <option value="1">1</option>
                                <option value="2">2</option>
                                <option value="3">3</option>
