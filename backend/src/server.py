@@ -28,7 +28,7 @@ except Exception as e:
     print(e)
 
 DATABASE_NAME = 'Data_Collection'
-COLLECTION_NAME = 'test_db'
+COLLECTION_NAME = 'online_dataset'
 db = mongo_client[DATABASE_NAME]
 
 
