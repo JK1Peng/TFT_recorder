@@ -2,8 +2,8 @@ from flask import Flask, jsonify, request, send_from_directory, session
 from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
-# from backend.src.function import Function
-from function import Function
+from backend.src.function import Function
+# from function import Function
 from pymongo.errors import PyMongoError
 import os
 

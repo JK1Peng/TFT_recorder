@@ -347,8 +347,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('custom-add-button') && e.target.dataset.player === 'player1') {
+            let currentPanelId = e.target.dataset.panel;
             document.querySelectorAll('[data-player="player1"]').forEach(btn => {
-                addChampionCard(btn.dataset.panel, "player1");
+                addChampionCard(btn.dataset.panel, "player1", currentPanelId);
             });
         }
     });
@@ -356,7 +357,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('[data-player="player2"]').forEach(button => {
         button.addEventListener('click', function() {
             var panelId = this.dataset.panel; 
-            addChampionCard(panelId, "player2");
+            addChampionCard(panelId, "player2",panelId);
         });
     });
     
@@ -483,7 +484,7 @@ $(document).ready(function() {
 
 });
 
-function addChampionCard(panelId, player) {
+function addChampionCard(panelId, player,currentPanelId = null) {
     var counterKey = panelId + '-' + player;
 
     if (!counters[counterKey]) {
@@ -1028,19 +1029,32 @@ function addChampionCard(panelId, player) {
 
     $(`#${panelId}-${player}-container-top`).append(newChampionCardHTML);
     initializeSelect2ForNewCard(currentTimeStamp);
-    setupSelect2Listeners(currentTimeStamp);
+    setupSelect2Listeners(currentTimeStamp,counters[counterKey]);
     bindDeleteEvent(); 
+
+    if (panelId === currentPanelId) {
+        setTimeout(function() {
+            $(`#${panelId}-${player}-container-top .champions-select-${currentTimeStamp}`).select2('open');
+        }, 0); 
+    }
 }
 
-function setupSelect2Listeners(timeStamp) {
-    // 监听champions select的选择事件
+function setupSelect2Listeners(timeStamp,counter) {
+
     $(`.champions-select-${timeStamp}`).on('select2:select', function (e) {
         $(`.stars-select-${timeStamp}`).select2('open');
     });
 
-    // 监听stars select的选择事件
     $(`.stars-select-${timeStamp}`).on('select2:select', function (e) {
-        $(`.items-select-${timeStamp}`).select2('open');
+        $(`.items-select-${timeStamp}[data-select-type='item1${counter}']`).select2('open');
+    });
+
+    $(`.items-select-${timeStamp}[data-select-type='item1${counter}']`).on('select2:select', function (e) {
+        $(`.items-select-${timeStamp}[data-select-type='item2${counter}']`).select2('open');
+    });
+
+    $(`.items-select-${timeStamp}[data-select-type='item2${counter}']`).on('select2:select', function (e) {
+        $(`.items-select-${timeStamp}[data-select-type='item3${counter}']`).select2('open');
     });
     
 }
