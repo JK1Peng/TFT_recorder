@@ -1149,7 +1149,7 @@ function initializeSelect2ForNewCard(timeStamp) {
     $(`.headliners-select-${timeStamp}, .champions-select-${timeStamp}, .stars-select-${timeStamp}, .items-select-${timeStamp}`).on('select2:open', function () {
         setTimeout(function() {
             $('.select2-dropdown').css({
-                'width': '200px',
+                'min-width': '200px',
                 'font-size': '14px',
             });
             $('.select2-search__field').on('input', function() {
