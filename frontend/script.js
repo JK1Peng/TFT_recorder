@@ -369,36 +369,60 @@ document.addEventListener('DOMContentLoaded', function() {
             var form = document.getElementById(formId);
     
             if (form && form.checkValidity()) {
-                var isConfirmed = confirm("Are you sure you want to submit this form?");
-                if (isConfirmed) {
-                    var formData = new FormData(form);
-                    var formObj = {};
-                    for (var pair of formData.entries()) {
-                        formObj[pair[0]] = pair[1];
-                    }
-                    console.log(formObj); 
+                // var isConfirmed = confirm("Are you sure you want to submit this form?");
+                // if (isConfirmed) {
+                //     var formData = new FormData(form);
+                //     var formObj = {};
+                //     for (var pair of formData.entries()) {
+                //         formObj[pair[0]] = pair[1];
+                //     }
+                //     console.log(formObj); 
 
-                    fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formObj), 
-                        mode: 'cors'
-                    })
-                    .then(response => response.json())
-                    .then(data => {
-                        console.log('Success:', data);
-                        alert(data.message);
-                    })
-                    .catch((error) => {
-                        console.error('Error:', error);
-                        alert(data.message);
-                    });
+                //     fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/json',
+                //         },
+                //         body: JSON.stringify(formObj), 
+                //         mode: 'cors'
+                //     })
+                //     .then(response => response.json())
+                //     .then(data => {
+                //         console.log('Success:', data);
+                //         alert(data.message);
+                //     })
+                //     .catch((error) => {
+                //         console.error('Error:', error);
+                //         alert(data.message);
+                //     });
     
-                } else {
-                    console.log('User cancelled the form submission.');
+                // } else {
+                //     console.log('User cancelled the form submission.');
+                // }
+                var formData = new FormData(form);
+                var formObj = {};
+                for (var pair of formData.entries()) {
+                    formObj[pair[0]] = pair[1];
                 }
+                console.log(formObj); 
+
+                fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formObj), 
+                    mode: 'cors'
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert(data.message);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert(data.message);
+                });
             } else {
                 console.error('Form not found or validation failed for panel:', panelName);
                 form.reportValidity();
@@ -451,6 +475,7 @@ $(document).ready(function() {
         allowClear: true,
         templateResult: hexOption, 
         templateSelection: hexOption, 
+        matcher: matchCustom
     });
 
     $(`.portal-select`).select2({
@@ -458,6 +483,7 @@ $(document).ready(function() {
         allowClear: true,
         templateResult: portalOption,
         templateSelection: portalOption, 
+        matcher: matchCustom
     });
     
     $(`.portal-select`).next('.select2-container').css({
@@ -476,7 +502,7 @@ $(document).ready(function() {
     $(`.portal-select, .hex-select`).on('select2:open', function() {
         setTimeout(function() {
             $('.select2-dropdown').css({
-                'width': '200px', 
+                'min-width': '200px', 
                 'font-size': '14px', 
             });
         }, 0);
@@ -915,7 +941,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="nashors_tooth" data-search="纳什之牙 ns">Nashor's Tooth</option>
                                 <option value="last_whisper" data-search="最后的轻语 qy">Last Whisper</option>
                                 <option value="bramble_vest" data-search="反甲 fj">Bramble Vest</option>
-                                <option value="gargoyle_stoneplate" data-search="石像鬼板甲 sjg bj">Gargoyle Stoneplate</option>
+                                <option value="gargoyle_stoneplate" data-search="石像鬼板甲 sxg bj">Gargoyle Stoneplate</option>
                                 <option value="sunfire_cape" data-search="日炎铠甲 ry  yan">Sunfire Cape</option>
                                 <option value="steadfast_heart" data-search="心之刚 gang xzg">Steadfast Heart</option>
                                 <option value="dragons_claw" data-search="龙牙 ly">Dragon's Claw</option>
