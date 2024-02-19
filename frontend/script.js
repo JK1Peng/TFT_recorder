@@ -537,6 +537,16 @@ function addChampionCard(panelId, player) {
                                 <option value="neeko" data-search="">妮蔻-Neeko</option>
                                 <option value="mordekaiser" data-search="铁男">莫德凯撒-Mordekaiser</option>
                                 <option value="ekko" data-search="时间刺客">艾克-Ekko</option>
+                                <option value="vex" data-search="熬夜波比">薇古丝-Vex</option>
+                                <option value="urgot" data-search="星之守护者 螃蟹">厄加特-Urgot</option>
+                                <option value="sett" data-search="腕豪 劲夫">瑟提-Sett</option>
+                                <option value="samira" data-search="">莎弥拉-Samira</option>
+                                <option value="riven" data-search="兔女郎">锐雯-Riven</option>
+                                <option value="missfortune" data-search="女枪">厄运小姐-MF</option>
+                                <option value="lux" data-search="光女 光辉">拉克丝-Lux</option>
+                                <option value="lulu" data-search="紫皮波比">璐璐-Lulu</option>
+                                <option value="yone" data-search="哥哥">永恩-yone</option>
+                                <option value="amumu" data-search="木乃伊">阿木木-Amumu</option>
                                 <option value="akali_kda" data-search="恐怖飞镖人">阿卡丽 (K/DA)-Akali (K/DA)</option>
                                 <option value="akali_truedamage" data-search="恐怖飞镖人">阿卡丽 (True Damage)-Akali (True Damage)</option>
                                 <option value="ahri" data-search="狐狸">阿狸-Ahri</option>
