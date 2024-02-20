@@ -47,7 +47,7 @@ def submit_data():
     data = request.json  
     try:
         transformed_data = function.transform_data(data)
-        result = db['test_db'].insert_one(transformed_data)
+        result = db['online_dataset'].insert_one(transformed_data)
         return jsonify(message="Data submitted successfully", id=str(result.inserted_id)), 201
     except PyMongoError as e:
         print(f"Error submitting data: {e}")
