@@ -47,7 +47,8 @@ def submit_data():
     data = request.json  
     try:
         transformed_data = function.transform_data(data)
-        result = db['online_dataset'].insert_one(transformed_data)
+        print(transformed_data)
+        result = db['test_db'].insert_one(transformed_data)
         return jsonify(message="Data submitted successfully", id=str(result.inserted_id)), 201
     except PyMongoError as e:
         print(f"Error submitting data: {e}")
@@ -61,7 +62,7 @@ def login_submit():
     user = db.account.find_one({'username': username, 'password': password})
 
     if user:
-        session['logged_in'] = True  # 设置会话标记为已登录
+        session['logged_in'] = True  
         return jsonify({'success': True, 'message': 'Login successful', 'user': {'username': user['username']}}), 200
     else:
         return jsonify({'success': False, 'message': 'Invalid username or password'}), 401
