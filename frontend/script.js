@@ -499,7 +499,7 @@ $(document).ready(function() {
 
 
     $(`.stage-select`).next('.select2-container').css({
-        'width': '50%',
+        'width': '40%',
         'margin-left': '30px',
         'margin-top': '5px'  
     });

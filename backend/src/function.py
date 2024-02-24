@@ -33,14 +33,30 @@ class Function:
                 }
                 new_data["players"][player_id]["champions"].append(champion_info)
             elif 'hex' in key:
-                hex_number = key.split('-')[1]
-                player_id = 'player1' if hex_number == '1' else 'player2'
-                if "hexes" not in new_data["players"][player_id]:
-                    new_data["players"][player_id]["hexes"] = []
+                player_num = key.split('-')[0][-1]  
+                player_id = f'player{player_num}' 
+                print(f"Processing key: {key}")  
                 new_data["players"][player_id]["hexes"].append(value)
 
         return new_data
 
-
-        # transformed_data = transform_data(data)
+        # transformed_data = transform_data(data)   
         # print(transformed_data)
+
+
+# data = {
+#     "btnradio": "win",
+#     "hex1-1": "vampirism_1",
+#     "hex1-2": "none",
+#     "hex1-3": "none",
+#     "hex2-1": "pumping_up_1",
+#     "hex2-2": "none",
+#     "hex2-3": "none",
+#     "portal1": "artifact_anvil",
+#     "stage": "1-3"
+# }
+
+# function = Function()
+
+# result = function.transform_data(data)
+# print(result)
