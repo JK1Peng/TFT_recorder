@@ -6,7 +6,7 @@ class Function:
         pass
 
     def transform_data(self, data):
-        new_data = {"players": {},"portal" :data.get("portal1"), "result": data.get("btnradio"),"stage":data.get("stage")}
+        new_data = {"players": {},"portal" :data.get("portal1"), "result": None,"stage":data.get("stage")}
 
         for key in data.keys():
             if 'hex1' in key:
@@ -37,6 +37,8 @@ class Function:
                 player_id = f'player{player_num}' 
                 print(f"Processing key: {key}")  
                 new_data["players"][player_id]["hexes"].append(value)
+            elif 'btnradio' in key:
+                new_data["result"] = value
 
         return new_data
 
@@ -45,7 +47,7 @@ class Function:
 
 
 # data = {
-#     "btnradio": "win",
+#     "btnradioGroup6": "win",
 #     "hex1-1": "vampirism_1",
 #     "hex1-2": "none",
 #     "hex1-3": "none",
