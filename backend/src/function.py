@@ -6,19 +6,19 @@ class Function:
         pass
 
     def transform_data(self, data):
-        new_data = {
-            "players": {},
-            "portal": data.get("portal1"),
-            "result": data.get("btnradio"),
-            "stage": data.get("stage")
-        }
+        new_data = {"players": {},"portal" :data.get("portal1"), "result": data.get("btnradio"),"stage":data.get("stage")}
 
-        # 初始化玩家数据结构
-        for player_id in ['player1', 'player2']:
-            new_data["players"][player_id] = {"champions": [], "hexes": []}
+        # for key in data.keys():
+        #     if 'hex1' in key:
+        #         player_id = 'player1'
+        #         if player_id not in new_data["players"]:
+        #             new_data["players"][player_id] = {"champions": [], "hexes": []}
+        #     elif 'hex2' in key:
+        #         player_id = 'player2'
+        #         if player_id not in new_data["players"]:
+        #             new_data["players"][player_id] = {"champions": [], "hexes": []}
 
         for key, value in data.items():
-            # 处理选手的英雄信息
             if 'player' in key and 'champion' in key:
                 player_id, _, champion_id = key.rsplit('-', 2)
                 champion_info = {
@@ -32,13 +32,15 @@ class Function:
                     ]
                 }
                 new_data["players"][player_id]["champions"].append(champion_info)
-            # 处理hex值，确保它们正确地分配给相应的玩家
             elif 'hex' in key:
-                hex_number, hex_id = key.split('-')[1:]
+                hex_number = key.split('-')[1]
                 player_id = 'player1' if hex_number == '1' else 'player2'
+                if "hexes" not in new_data["players"][player_id]:
+                    new_data["players"][player_id]["hexes"] = []
                 new_data["players"][player_id]["hexes"].append(value)
 
         return new_data
-    
+
+
         # transformed_data = transform_data(data)
         # print(transformed_data)
