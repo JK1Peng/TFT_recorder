@@ -6,8 +6,7 @@ class Function:
         pass
 
     def transform_data(self, data):
-        new_data = {"players": {},"portal" :data.get("portal1"), "result": data.get("btnradio")}
-        print(data.get("btnradio"))
+        new_data = {"players": {},"portal" :data.get("portal1"), "result": data.get("btnradio"),"stage":data.get("stage")}
 
         for key in data.keys():
             if 'hex1' in key:

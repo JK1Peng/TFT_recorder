@@ -2,8 +2,8 @@ from flask import Flask, jsonify, request, send_from_directory, session
 from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
-from backend.src.function import Function
-# from function import Function
+# from backend.src.function import Function
+from function import Function
 from pymongo.errors import PyMongoError
 import os
 
@@ -42,14 +42,14 @@ def index():
         return send_from_directory(app.static_folder, 'login.html')
     return send_from_directory(app.static_folder, 'index.html')
 
-@app.route('/submit', methods=['POST'])
+@app.route('/submit', methods=['POST']) 
 def submit_data():
     data = request.json  
+    print(data)
     try:
         transformed_data = function.transform_data(data)
-        print(transformed_data)
         result = db['test_db'].insert_one(transformed_data)
-        return jsonify(message="Data submitted successfully", id=str(result.inserted_id)), 201
+        return jsonify(message="Data submitted successfully{result}", id=str(result.inserted_id),), 201
     except PyMongoError as e:
         print(f"Error submitting data: {e}")
         return jsonify(message="Data submission failed", error=str(e)), 500

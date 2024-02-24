@@ -107,6 +107,7 @@
     margin-left: 40px;
     width: 20%;  */
     width: auto;
+    margin-top: 14px;
 }
 
 .custom-card-header-tab {
@@ -152,6 +153,7 @@
     height: 25px; 
     border-width: 1px; */
     width: auto;
+    margin-top: 16px;
 }
 
 .custom-add-button{
@@ -206,6 +208,12 @@
     font-weight: bold; 
     margin-bottom: 0px; 
     margin-top: 13px; 
+}
+
+.stage-title {
+    font-size: 14px; 
+    font-weight: bold; 
+    margin-bottom: 0px; 
 }
 
 .col-1-5 {

@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert(data.message);
                 });
             } else {
-                console.error('Form not found or validation failed for panel:', panelName);
+                console.error('Form11 not found or validation failed for panel:', panelName);
                 form.reportValidity();
             }
         });
@@ -485,9 +485,21 @@ $(document).ready(function() {
         templateSelection: portalOption, 
         matcher: matchCustom
     });
+
+    $(`.stage-select`).select2({
+        placeholder: "请选择",
+        allowClear: true
+    });
     
     $(`.portal-select`).next('.select2-container').css({
-        'width': '70%',
+        'width': '60%',
+        'margin-left': '30px',
+        'margin-top': '5px'  
+    });
+
+
+    $(`.stage-select`).next('.select2-container').css({
+        'width': '50%',
         'margin-left': '30px',
         'margin-top': '5px'  
     });
