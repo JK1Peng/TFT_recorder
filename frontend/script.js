@@ -759,7 +759,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="rascals_gloves"  data-search="光明 偷偷 窃贼手套 tt tou">Rascal's Gloves</option>
                                 <option value="rosethorn_vest" data-search="光明 反甲 fj fan">Rosethorn Vest</option>
                                 <option value="royal_crownshield" data-search="光明 冕卫 mw mian">Royal Crownshield</option>
-                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju">Runaan's Tempest</option>
+                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju lan">Runaan's Tempest</option>
                                 <option value="spear_of_hirana" data-search="光明 青龙刀 qld qing">Spear of Hirana</option>
                                 <option value="statikk_favor" data-search="光明 电刀 diandao dd">Statikk Favor</option>
                                 <option value="steraks_megashield" data-search="光明 血手 xueshou xs">Sterak's Megashield</option>
@@ -814,7 +814,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="infinity_edge" data-search="无尽之刃 wj">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符 hong hb">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决 tt">Titan's Resolve</option>
-                                <option value="runaans_hurricane" data-search="卢安娜的飓风 jf">Runaan's Hurricane</option>
+                                <option value="runaans_hurricane" data-search="卢安娜的飓风 jf lan">Runaan's Hurricane</option>
                                 <option value="guinsoos_rageblade"data-search="羊刀 鬼刀 yd">Guinsoo's Rageblade</option>
                                 <option value="statikk_shiv" data-search="电刀 dd">Statikk Shiv</option>
                                 <option value="nashors_tooth" data-search="纳什之牙 ns">Nashor's Tooth</option>
