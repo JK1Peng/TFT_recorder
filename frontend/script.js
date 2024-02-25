@@ -593,7 +593,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="karthus" data-search="死歌  sg ">卡尔萨斯-Karthus</option>
                                 <option value="caitlyn" data-search="女警 nj">凯特琳-Caitlyn</option>
                                 <option value="thresh" data-search="cs chui">锤石-Thresh</option>
-                                <option value="twistedfate" data-search="卡牌 kp">崔斯特-Twisted Fate</option>
+                                <option value="twistedfate" data-search="tf 卡牌 kp">崔斯特-Twisted Fate</option>
                                 <option value="blitzcrank" data-search="机器人 jqr">布里茨-Blitzcrank</option>
                                 <option value="zac" data-search="粑粑人 zk">扎克-Zac</option>
                                 <option value="zed" data-search="恐怖飞镖人 jie">劫-Zed</option>
@@ -605,6 +605,8 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="lucian" data-search="尼哥 luxi">卢锡安-Lucian</option>
                                 <option value="sona" data-search="琴女 qn">娑娜-Sona</option>
                                 <option value="yorick" data-search="掘墓 juemu jm">约里克-Yorick</option>
+                                <option value="kayn" data-search="ky 影流">凯影-Kayn</option>
+                                <option value="jhin" data-search="jhin">烬-Jhin</option>
                             </select>
                         </div>
                          <div class="col-2-5">
@@ -694,9 +696,9 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="archangels_staff" data-search="大天使 dts dat">Archangel's Staff</option>
                                 <option value="morellonomicon"data-search="鬼书 guis gs">Morellonomicon</option>
                                 <option value="jeweled_gauntlet" data-search="法爆 珠光护手 fb fa zg">Jeweled Gauntlet</option>
-                                <option value="protectors_vow" data-search="圣盾使的誓约 sds“>Protector's Vow</option>
-                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx”>Adaptive Helm</option>
-                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan">Blue Buff</option>
+                                <option value="protectors_vow" data-search="圣盾使的誓约 sds ">Protector's Vow</option>
+                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx ">Adaptive Helm</option>
+                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan ">Blue Buff</option>
                                 <option value="redemption" data-search="救赎 js">Redemption</option>
                                 <option value="hand_of_justice"data-search="正义之手 zhengyi zy">Hand Of Justice</option>
                                 <option value="warmogs_armor"data-search="狂徒铠甲 kt">Warmog's Armor</option>
