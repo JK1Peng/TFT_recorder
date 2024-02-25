@@ -675,7 +675,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="hextech_gunblade" data-search="海克斯科技枪 kjq">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀 qld">Spear of Shojin</option>
                                 <option value="steraks_gage" data-search="血手 xs"">Sterak's Gage</option>
-                                <option value="infinity_edge" data-search="无尽之刃 wj">Infinity Edge</option>
+                                <option value="Infinity_edge" data-search="ie 无尽之刃 wj">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符 hong hb">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决 tt">Titan's Resolve</option>
                                 <option value="runaans_hurricane" data-search="卢安娜的飓风 jf">Runaan's Hurricane</option>
