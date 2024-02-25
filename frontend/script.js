@@ -369,36 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
             var form = document.getElementById(formId);
     
             if (form && form.checkValidity()) {
-                // var isConfirmed = confirm("Are you sure you want to submit this form?");
-                // if (isConfirmed) {
-                //     var formData = new FormData(form);
-                //     var formObj = {};
-                //     for (var pair of formData.entries()) {
-                //         formObj[pair[0]] = pair[1];
-                //     }
-                //     console.log(formObj); 
-
-                //     fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
-                //         method: 'POST',
-                //         headers: {
-                //             'Content-Type': 'application/json',
-                //         },
-                //         body: JSON.stringify(formObj), 
-                //         mode: 'cors'
-                //     })
-                //     .then(response => response.json())
-                //     .then(data => {
-                //         console.log('Success:', data);
-                //         alert(data.message);
-                //     })
-                //     .catch((error) => {
-                //         console.error('Error:', error);
-                //         alert(data.message);
-                //     });
-    
-                // } else {
-                //     console.log('User cancelled the form submission.');
-                // }
                 var formData = new FormData(form);
                 var formObj = {};
                 for (var pair of formData.entries()) {
@@ -423,6 +393,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('Error:', error);
                     alert(data.message);
                 });
+
+                // 找到select元素
+                var selectElement = document.querySelector('.stage-select');
+                var currentIndex = selectElement.selectedIndex;
+
+                // 检查是否不是最后一个选项
+                if (currentIndex < selectElement.options.length - 1) {
+                    // 选择下一个选项
+                    selectElement.selectedIndex = currentIndex + 1;
+                } else {
+                    // 如果已经是最后一个选项，可能会选择回到第一个选项或者其他逻辑
+                    selectElement.selectedIndex = 0; // 回到第一个选项
+                }
+
+                // 如果需要，这里可以手动触发select元素的change事件
+                var event = new Event('change', { 'bubbles': true, 'cancelable': true });
+                selectElement.dispatchEvent(event);                
             } else {
                 console.error('Form11 not found or validation failed for panel:', panelName);
                 form.reportValidity();
