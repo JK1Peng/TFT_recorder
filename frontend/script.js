@@ -798,10 +798,10 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="hextech_gunblade" data-search="海克斯科技枪 kjq">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀 qld">Spear of Shojin</option>
                                 <option value="steraks_gage" data-search="血手 xs"">Sterak's Gage</option>
-                                <option value="infinity_edge" data-search="无尽之刃 wj">Infinity Edge</option>
+                                <option value="Infinity_edge" data-search="ie 无尽之刃 wj">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符 hong hb">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决 tt">Titan's Resolve</option>
-                                <option value="runaans_hurricane" data-search="卢安娜的飓风 jf lan">Runaan's Hurricane</option>
+                                <option value="runaans_hurricane" data-search="卢安娜的飓风 jf">Runaan's Hurricane</option>
                                 <option value="guinsoos_rageblade"data-search="羊刀 鬼刀 yd">Guinsoo's Rageblade</option>
                                 <option value="statikk_shiv" data-search="电刀 dd">Statikk Shiv</option>
                                 <option value="nashors_tooth" data-search="纳什之牙 ns">Nashor's Tooth</option>
@@ -819,9 +819,9 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="archangels_staff" data-search="大天使 dts dat">Archangel's Staff</option>
                                 <option value="morellonomicon"data-search="鬼书 guis gs">Morellonomicon</option>
                                 <option value="jeweled_gauntlet" data-search="法爆 珠光护手 fb fa zg">Jeweled Gauntlet</option>
-                                <option value="protectors_vow" data-search="圣盾使的誓约 sds“>Protector's Vow</option>
-                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx”>Adaptive Helm</option>
-                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan">Blue Buff</option>
+                                <option value="protectors_vow" data-search="圣盾使的誓约 sds ">Protector's Vow</option>
+                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx ">Adaptive Helm</option>
+                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan ">Blue Buff</option>
                                 <option value="redemption" data-search="救赎 js">Redemption</option>
                                 <option value="hand_of_justice"data-search="正义之手 zhengyi zy">Hand Of Justice</option>
                                 <option value="warmogs_armor"data-search="狂徒铠甲 kt">Warmog's Armor</option>
@@ -882,7 +882,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="rascals_gloves"  data-search="光明 偷偷 窃贼手套 tt tou">Rascal's Gloves</option>
                                 <option value="rosethorn_vest" data-search="光明 反甲 fj fan">Rosethorn Vest</option>
                                 <option value="royal_crownshield" data-search="光明 冕卫 mw mian">Royal Crownshield</option>
-                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju">Runaan's Tempest</option>
+                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju lan">Runaan's Tempest</option>
                                 <option value="spear_of_hirana" data-search="光明 青龙刀 qld qing">Spear of Hirana</option>
                                 <option value="statikk_favor" data-search="光明 电刀 diandao dd">Statikk Favor</option>
                                 <option value="steraks_megashield" data-search="光明 血手 xueshou xs">Sterak's Megashield</option>
@@ -913,7 +913,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="sentinel_emblem" data-search="秘术护卫转 秘卫 mw miwei mshu">Sentinel Emblem</option>
                                 <option value="spellweaver_emblem" data-search="法师转 法转 fz fashi">Spellweaver Emblem</option>
                                 <option value="superfan_emblem" data-search="超级粉丝转 cf">Superfan Emblem</option>
-                                <option value="true_damage_emblem" data-search="真实伤害转 zs td">True Damage Emblem</option>           
+                                <option value="true_damage_emblem" data-search="真实伤害转 zs td">True Damage Emblem</option>                          
                             </select>
                             <select name="${player}-item3-${counters[counterKey]}" data-player="${player}" data-select-type="item3${counters[counterKey]}" class="select2-search items-select-${currentTimeStamp}">
                                 <option value="none" selected></option>
@@ -933,7 +933,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="hextech_gunblade" data-search="海克斯科技枪 kjq">Hextech Gunblade</option>
                                 <option value="spear_of_shojin" data-search="青龙刀 qld">Spear of Shojin</option>
                                 <option value="steraks_gage" data-search="血手 xs"">Sterak's Gage</option>
-                                <option value="infinity_edge" data-search="无尽之刃 wj">Infinity Edge</option>
+                                <option value="Infinity_edge" data-search="ie 无尽之刃 wj">Infinity Edge</option>
                                 <option value="red_buff" data-search="红buff 红霸符 hong hb">Red Buff</option>
                                 <option value="titans_resolve" data-search="泰坦的坚决 tt">Titan's Resolve</option>
                                 <option value="runaans_hurricane" data-search="卢安娜的飓风 jf">Runaan's Hurricane</option>
@@ -942,7 +942,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="nashors_tooth" data-search="纳什之牙 ns">Nashor's Tooth</option>
                                 <option value="last_whisper" data-search="最后的轻语 qy">Last Whisper</option>
                                 <option value="bramble_vest" data-search="反甲 fj">Bramble Vest</option>
-                                <option value="gargoyle_stoneplate" data-search="石像鬼板甲 sxg bj">Gargoyle Stoneplate</option>
+                                <option value="gargoyle_stoneplate" data-search="石像鬼板甲 sjg bj">Gargoyle Stoneplate</option>
                                 <option value="sunfire_cape" data-search="日炎铠甲 ry  yan">Sunfire Cape</option>
                                 <option value="steadfast_heart" data-search="心之刚 gang xzg">Steadfast Heart</option>
                                 <option value="dragons_claw" data-search="龙牙 ly">Dragon's Claw</option>
@@ -954,9 +954,9 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="archangels_staff" data-search="大天使 dts dat">Archangel's Staff</option>
                                 <option value="morellonomicon"data-search="鬼书 guis gs">Morellonomicon</option>
                                 <option value="jeweled_gauntlet" data-search="法爆 珠光护手 fb fa zg">Jeweled Gauntlet</option>
-                                <option value="protectors_vow" data-search="圣盾使的誓约 sds“>Protector's Vow</option>
-                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx”>Adaptive Helm</option>
-                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan">Blue Buff</option>
+                                <option value="protectors_vow" data-search="圣盾使的誓约 sds ">Protector's Vow</option>
+                                <option value="adaptive_helm"data-search="贾修 适应性头盔 jx ">Adaptive Helm</option>
+                                <option value="blue_buff" data-search="蓝buff 蓝霸符 lan ">Blue Buff</option>
                                 <option value="redemption" data-search="救赎 js">Redemption</option>
                                 <option value="hand_of_justice"data-search="正义之手 zhengyi zy">Hand Of Justice</option>
                                 <option value="warmogs_armor"data-search="狂徒铠甲 kt">Warmog's Armor</option>
@@ -1017,7 +1017,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="rascals_gloves"  data-search="光明 偷偷 窃贼手套 tt tou">Rascal's Gloves</option>
                                 <option value="rosethorn_vest" data-search="光明 反甲 fj fan">Rosethorn Vest</option>
                                 <option value="royal_crownshield" data-search="光明 冕卫 mw mian">Royal Crownshield</option>
-                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju">Runaan's Tempest</option>
+                                <option value="runaans_tempest" data-search="光明 卢安娜的飓风 jf ju lan">Runaan's Tempest</option>
                                 <option value="spear_of_hirana" data-search="光明 青龙刀 qld qing">Spear of Hirana</option>
                                 <option value="statikk_favor" data-search="光明 电刀 diandao dd">Statikk Favor</option>
                                 <option value="steraks_megashield" data-search="光明 血手 xueshou xs">Sterak's Megashield</option>
@@ -1048,7 +1048,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="sentinel_emblem" data-search="秘术护卫转 秘卫 mw miwei mshu">Sentinel Emblem</option>
                                 <option value="spellweaver_emblem" data-search="法师转 法转 fz fashi">Spellweaver Emblem</option>
                                 <option value="superfan_emblem" data-search="超级粉丝转 cf">Superfan Emblem</option>
-                                <option value="true_damage_emblem" data-search="真实伤害转 zs td">True Damage Emblem</option>       
+                                <option value="true_damage_emblem" data-search="真实伤害转 zs td">True Damage Emblem</option>    
                             </select>
                         </div>
                     </div>
