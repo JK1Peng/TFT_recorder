@@ -602,6 +602,7 @@ function addChampionCard(panelId, player,currentPanelId = null) {
                                 <option value="none" selected></option>
                                 <option value="origin_8bit" data-search="8bt" >8-bit_8比特</option>
                                 <option value="origin_country" data-search="xc">Country_乡村音乐</option>
+                                <option value="origin_jazz" data-search="js jazz jueshi">Jazz_爵士乐</option>
                                 <option value="origin_disco">Disco_迪斯科</option>
                                 <option value="origin_edm">EDM</option>
                                 <option value="origin_emo">Emo</option>
