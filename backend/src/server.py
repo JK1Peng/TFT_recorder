@@ -72,10 +72,17 @@ def login_submit():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.json 
-    features = transform_data_to_features(data)
-    prediction = model.predict([features])  
-    return jsonify({'prediction': int(prediction[0])})
+    try:
+        data = request.get_json()
+        if not data:
+            raise ValueError("No data provided")
+        
+        features = transform_data_to_features(data)
+        prediction = model.predict([features])
+        return jsonify({'prediction': int(prediction[0])})
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 def transform_data_to_features(data):
     transformed_data = function.transform_data(data)
