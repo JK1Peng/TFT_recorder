@@ -3,7 +3,6 @@ from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
 from backend.src.function import Function
-from backend.src.random_forest import RandomForestClassifier
 # from function import Function
 from pymongo.errors import PyMongoError
 from joblib import load
