@@ -374,48 +374,62 @@ document.addEventListener('DOMContentLoaded', function() {
                 for (var pair of formData.entries()) {
                     formObj[pair[0]] = pair[1];
                 }
-                console.log(formObj); 
-
-                fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', { 
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formObj), 
-                    mode: 'cors'
-                })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    alert(data.message);
-                })
-                .catch((error) => {
-                    console.error('Error:', error);
-                    alert(data.message);
-                });
-
-                // 找到select元素
+                console.log(formObj);
+    
+                if (this.id === 'submitFormBtn') {
+                    fetch('https://coral-app-lwsnx.ondigitalocean.app/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formObj),
+                        mode: 'cors'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert(data.message);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('An error occurred during form submission');
+                    });
+                } else if (this.id === 'predictBtn') {
+                    fetch('https://coral-app-lwsnx.ondigitalocean.app/predict', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formObj),
+                        mode: 'cors'
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Prediction Success:', data);
+                        alert('Prediction result: ' + (data.prediction ? 'Win' : 'Lose'));
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('An error occurred during prediction');
+                    });
+                }
+    
                 var selectElement = document.querySelector('.stage-select');
                 var currentIndex = selectElement.selectedIndex;
-
-                // 检查是否不是最后一个选项
                 if (currentIndex < selectElement.options.length - 1) {
-                    // 选择下一个选项
                     selectElement.selectedIndex = currentIndex + 1;
                 } else {
-                    // 如果已经是最后一个选项，可能会选择回到第一个选项或者其他逻辑
-                    selectElement.selectedIndex = 0; // 回到第一个选项
+                    selectElement.selectedIndex = 0;
                 }
-
-                // 如果需要，这里可以手动触发select元素的change事件
                 var event = new Event('change', { 'bubbles': true, 'cancelable': true });
-                selectElement.dispatchEvent(event);                
+                selectElement.dispatchEvent(event);
             } else {
-                console.error('Form11 not found or validation failed for panel:', panelName);
+                console.error('Form not found or validation failed for panel:', panelName);
                 form.reportValidity();
             }
         });
     });
+    
     
 
     $(document).on('select2:select', '.select2-search[data-player="player1"]', function(e) {
