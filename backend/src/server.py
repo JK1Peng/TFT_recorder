@@ -1,11 +1,13 @@
 from flask import Flask, jsonify, request, send_from_directory, session
+from numpy import convolve
 from pymongo.mongo_client import MongoClient
 from dotenv import load_dotenv
 from flask_cors import CORS
-from backend.src.function import Function
-# from function import Function
+# from backend.src.function import Function
+from function import Function
 from pymongo.errors import PyMongoError
 from joblib import load
+import logging
 import os
 
 load_dotenv()
@@ -70,10 +72,10 @@ def login_submit():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-    data = request.get_json() 
+    data = request.json 
     features = transform_data_to_features(data)
     prediction = model.predict([features])  
-    return jsonify({'prediction': int(prediction[0])}) 
+    return jsonify({'prediction': int(prediction[0])})
 
 def transform_data_to_features(data):
     transformed_data = function.transform_data(data)
